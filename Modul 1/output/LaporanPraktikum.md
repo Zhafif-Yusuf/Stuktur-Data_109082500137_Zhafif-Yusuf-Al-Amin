@@ -73,6 +73,7 @@ int main() {
     cout << "Hasil Perkalian   : " << x * y << endl;
     return 0;
 }
+```
 ### Output Unguided 1 :
 
 ##### Output 1
@@ -92,7 +93,7 @@ angka tersebut dalam bentuk tulisan. Angka yang akan di-input-kan user adalah bi
 positif mulai dari 0 s.d 100)
 
 source code unguided 2
-
+```
 #include <iostream>
 #include <string>
 using namespace std;
@@ -138,6 +139,7 @@ int main()
     }
     return 0;
 }
+```
 
 ### Output Unguided 2 :
 
@@ -156,6 +158,7 @@ penjelasan unguided 2
 ### 3\. (Buatlah program yang dapat memberikan input dan output sbb.)
 
 source code unguided 3
+```
 #include <iostream>
 using namespace std;
 
@@ -177,7 +180,7 @@ int main() {
     }
     return 0;
 }
-
+```
 ### Output Unguided 3 :
 
 ##### Output 1
