@@ -79,7 +79,7 @@ int main() {
 ![Screenshot Output Unguided 1_1](https://raw.githubusercontent.com/Zhafif-Yusuf/Stuktur-Data_109082500137_Zhafif-Yusuf-Al-Amin/main/Modul%201/output/OutputSoal1.png)
 
 
-sebuah kode yang menggunakan bahasa cpp yang berfungsi untuk menghitung hasil penjumlahan, pengurangan, perkalian, dan pembagian dari dua bilangan yang inputannya sebuah float atau bilangan desimal. Program ini bekerja dengan menerima input angka dari pengguna melalui cin, menyimpannya ke dalam variabel x dan y, lalu mengeksekusi operasi matematika dasar secara langsung untuk kemudian menampilkan seluruh hasilnya di terminal menggunakan cout."
+sebuah kode yang menggunakan bahasa cpp yang berfungsi untuk menghitung hasil penjumlahan, pengurangan, perkalian, dan pembagian dari dua bilangan yang inputannya sebuah float atau bilangan desimal. Program ini bekerja dengan menerima input angka dari pengguna melalui cin, menyimpannya ke dalam variabel x dan y, lalu mengeksekusi operasi matematika dasar secara langsung untuk kemudian menampilkan seluruh hasilnya di terminal menggunakan cout
 
 ### 2\. Buatlah sebuah program yang menerima masukan angka dan mengeluarkan output nilai
 angka tersebut dalam bentuk tulisan. Angka yang akan di-input-kan user adalah bilangan bulat
@@ -140,7 +140,7 @@ int main()
 
 ![Screenshot Output Unguided 2_1](https://raw.githubusercontent.com/Zhafif-Yusuf/Stuktur-Data_109082500137_Zhafif-Yusuf-Al-Amin/main/Modul%201/output/OutputSoal2.png)
 
-program ini menggunakan bahasa C++ yang berfungsi untuk mengonversi input angka bulat integer dari rentang 0 hingga 100 menjadi teks terbilangnya dalam bahasa indonesia. Program ini memanfaatkan array satuan untuk menyimpan kata dasar angka, serta percabangan if-else untuk mengecek kondisi angka—mulai dari angka khusus (seperti 0, 10, 11, dan 100), angka belasan (n % 10), hingga angka puluhan yang dipecah menjadi digit puluhan (n / 10) dan satuannya (n % 10) untuk menampilkan hasil teksnya di terminal.
+program ini menggunakan bahasa C++ yang berfungsi untuk mengonversi input angka bulat integer dari rentang 0 hingga 100 menjadi teks terbilangnya dalam bahasa indonesia. Program ini memanfaatkan array satuan untuk menyimpan kata dasar angka, serta percabangan if-else untuk mengecek kondisi angka—mulai dari angka khusus (seperti 0, 10, 11, dan 100), angka belasan (n % 10), hingga angka puluhan yang dipecah menjadi digit puluhan (n / 10) dan satuannya (n % 10) untuk menampilkan hasil teksnya di terminal
 
 ### 3\. (Buatlah program yang dapat memberikan input dan output sbb.)
 
