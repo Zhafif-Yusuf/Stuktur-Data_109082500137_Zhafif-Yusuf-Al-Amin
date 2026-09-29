@@ -13,9 +13,7 @@ Struktur data dapat didefinisikan sebagai tata letak penyimpanan data yang logis
 
 #### 2. Klasifikasi Struktur Data
 Secara garis besar, struktur data dikelompokkan menjadi dua kategori utama, yaitu struktur data linier dan struktur data non-linier[4]:
-
 Struktur Data Linier: Elemen-elemen data disusun secara berurutan atau sekuensial[4]. Contoh dari struktur data linier meliputi Array, Linked List, Stack, dan Queue[3][4].
-
 Struktur Data Non-Linier: Elemen-elemen data tersusun secara hierarkis atau saling terhubung tidak dalam satu garis lurus[4]. Contoh dari struktur data non-linier mencakup Tree dan Graph[3][4].
 
 #### 3. Operasi Dasar pada Struktur Data
@@ -81,11 +79,6 @@ int main() {
 ![Screenshot Output Unguided 1_1](https://raw.githubusercontent.com/Zhafif-Yusuf/Stuktur-Data_109082500137_Zhafif-Yusuf-Al-Amin/main/Modul%201/output/OutputSoal1.png)
 
 
-
-##### Output 2
-
-![Screenshot Output Unguided 2_1](https://raw.githubusercontent.com/Zhafif-Yusuf/Stuktur-Data_109082500137_Zhafif-Yusuf-Al-Amin/main/Modul%201/output/OutputSoal1.png)
-
 penjelasan unguided 1
 
 ### 2\. Buatlah sebuah program yang menerima masukan angka dan mengeluarkan output nilai
@@ -145,13 +138,7 @@ int main()
 
 ##### Output 1
 
-![Screenshot Output Unguided 2_1](https://raw.githubusercontent.com/Zhafif-Yusuf/Stuktur-Data_109082500137_Zhafif-Yusuf-Al-Amin/main/Modul%201/output/OutputSoal1.png)
-
-
-
-##### Output 2
-
-![Screenshot Output Unguided 2_1](https://raw.githubusercontent.com/Zhafif-Yusuf/Stuktur-Data_109082500137_Zhafif-Yusuf-Al-Amin/main/Modul%201/output/OutputSoal1.png)
+![Screenshot Output Unguided 2_1](https://raw.githubusercontent.com/Zhafif-Yusuf/Stuktur-Data_109082500137_Zhafif-Yusuf-Al-Amin/main/Modul%201/output/OutputSoal2.png)
 
 penjelasan unguided 2
 
@@ -184,10 +171,6 @@ int main() {
 ### Output Unguided 3 :
 
 ##### Output 1
-
-![Screenshot Output Unguided 2_1](https://raw.githubusercontent.com/Zhafif-Yusuf/Stuktur-Data_109082500137_Zhafif-Yusuf-Al-Amin/main/Modul%201/output/OutputSoal3.png)
-
-##### Output 2
 
 ![Screenshot Output Unguided 2_1](https://raw.githubusercontent.com/Zhafif-Yusuf/Stuktur-Data_109082500137_Zhafif-Yusuf-Al-Amin/main/Modul%201/output/OutputSoal3.png)
 
