@@ -25,7 +25,7 @@ Penisipan (Insertion): Menambahkan elemen data baru ke dalam lokasi tertentu pad
 Penghapusan (Deletion): Mengeluarkan atau menghapus elemen data dari struktur data[5].
 Pencarian (Searching): Menemukan lokasi elemen data berdasarkan kriteria atau nilai kunci tertentu[3].
 
-B. Linked List
+### B. Linked List
 Linked list merupakan struktur data linier dinamis yang alokasi memorinya dilakukan pada saat program dijalankan (runtime)[1][2]. Berbeda dengan array yang mengalokasikan memori secara berurutan dan berukuran tetap (static contiguous memory), linked list dapat bertambah atau berkurang ukurannya sesuai kebutuhan tanpa memuat batas maksimum di awal[1][2]. Setiap node pada linked list umumnya terdiri dari dua bagian utama, yaitu infotype (data) dan next (pointer penunjuk ke node berikutnya)[1][5].
 
 #### 1. Jenis-Jenis Linked List
