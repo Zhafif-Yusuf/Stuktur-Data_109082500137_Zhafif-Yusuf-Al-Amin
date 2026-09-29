@@ -6,30 +6,28 @@ Zhafif Yusuf Al Amin \- 109082500137
 ## Dasar Teori
 
 A. Stuktur Data
-Struktur data adalah tata letak atau cara mengorganisasikan, mengelola, dan menyimpan data di dalam memori komputer agar dapat diakses serta dimanipulasi secara efisien oleh suatu algoritma [1]. Penggunaan struktur data yang tepat sangat mempengaruhi performa sistem, kompleksitas waktu (time complexity), serta efisiensi penggunaan ruang memori (space complexity) [2].
+Struktur data merupakan cara atau skema dalam mengorganisasikan, menyimpan, dan mengelola data di dalam memori komputer agar dapat diakses dan dimanipulasi secara efisien oleh program[3]. Pemilihan struktur data yang tepat sangat mempengaruhi performa sistem, efisiensi memori, serta kompleksitas waktu eksekusi suatu algoritma[3][4].
 
 #### 1. Pengertian Struktur Data
-Struktur data dapat didefinisikan sebagai skema pengorganisasian data yang diterapkan pada kumpulan elemen data beserta himpunan operasi yang berlaku pada data tersebut [1]. Secara garis besar, struktur data memfasilitasi pemrosesan data berjumlah besar secara terstruktur sehingga penanganan data menjadi lebih optimal [3].
+Struktur data dapat didefinisikan sebagai tata letak penyimpanan data yang logis beserta himpunan operasi yang dapat diterapkan pada data tersebut[3]. Dengan menerapkan struktur data, pemrosesan himpunan data yang berukuran besar dapat dilakukan secara sistematis dan terstruktur[4].
 
 #### 2. Klasifikasi Struktur Data
-Struktur data secara umum dikelompokkan menjadi dua kategori utama, yaitu struktur data linier dan struktur data non-linier [2]:
+Secara garis besar, struktur data dikelompokkan menjadi dua kategori utama, yaitu struktur data linier dan struktur data non-linier[4]:
 
-Struktur Data Linier: Elemen-elemen data tersusun secara berurutan atau sekuensial dalam satu baris [2]. Contoh dari struktur data linier antara lain Array, Linked List, Stack (Tumpukan), dan Queue (Antrean) [1], [2].
+Struktur Data Linier: Elemen-elemen data disusun secara berurutan atau sekuensial[4]. Contoh dari struktur data linier meliputi Array, Linked List, Stack, dan Queue[3][4].
 
-Struktur Data Non-Linier: Elemen-elemen data tidak tersusun secara berurutan, melainkan terhubung secara hierarkis atau berjejaring [2]. Contoh dari struktur data non-linier adalah Tree (Pohon) dan Graph (Graf) [3].
+Struktur Data Non-Linier: Elemen-elemen data tersusun secara hierarkis atau saling terhubung tidak dalam satu garis lurus[4]. Contoh dari struktur data non-linier mencakup Tree dan Graph[3][4].
 
 #### 3. Operasi Dasar pada Struktur Data
-Setiap jenis struktur data mendukung serangkaian operasi dasar yang digunakan untuk memanipulasi data di dalamnya, antara lain [1], [3]:
+Setiap struktur data mendukung berbagai operasi dasar untuk pengolahan data, di antaranya[3][5]:
 
-Pengaksesan (Traversing): Mengunjungi setiap elemen data dalam struktur data setidaknya satu kali untuk melakukan pemrosesan tertentu [1].
+Pengaksesan (Traversing): Menelusuri atau mengunjungi setiap elemen data dalam struktur data[3].
 
-Penisipan (Insertion): Menambahkan elemen data baru ke dalam struktur data [3].
+Penisipan (Insertion): Menambahkan elemen data baru ke dalam lokasi tertentu pada struktur data[5].
 
-Penghapusan (Deletion): Menghapus elemen data yang ada dari struktur data [3].
+Penghapusan (Deletion): Mengeluarkan atau menghapus elemen data dari struktur data[5].
 
-Pencarian (Searching): Menemukan lokasi atau keberadaan suatu elemen data berdasarkan kunci tertentu [1].
-
-Pengurutan (Sorting): Menyusun ulang elemen-elemen data berdasarkan urutan tertentu (misalnya ascending atau descending) [2].
+Pencarian (Searching): Menemukan lokasi elemen data berdasarkan kriteria atau nilai kunci tertentu[3].
 
 B. Linked List
 Linked list merupakan struktur data linier dinamis yang alokasi memorinya dilakukan pada saat program dijalankan (runtime)[1][2]. Berbeda dengan array yang mengalokasikan memori secara berurutan dan berukuran tetap (static contiguous memory), linked list dapat bertambah atau berkurang ukurannya sesuai kebutuhan tanpa memuat batas maksimum di awal[1][2]. Setiap node pada linked list umumnya terdiri dari dua bagian utama, yaitu infotype (data) dan next (pointer penunjuk ke node berikutnya)[1][5].
@@ -54,15 +52,11 @@ Penelusuran (Traversal): Menelusuri setiap node dari ujung awal (head) hingga uj
 
 #### 3. Kelebihan dan Kekurangan Linked List
 Kelebihan:
-
 Pengalokasian memori bersifat dinamis sesuai kebutuhan data[1][2].
-
 Operasi penyisipan dan penghapusan data bersifat efisien karena tidak memerlukan penggeseran (shifting) elemen data di memori[1][5].
 
 Kekurangan:
-
 Membutuhkan alokasi memori tambahan untuk menyimpan pointer/alamat pada setiap node[1][2].
-
 Tidak mendukung akses acak (random access) secara langsung menggunakan indeks seperti pada array; pencarian harus dilakukan secara sekuensial (sequential search)[1][5].
 
 ## Unguided
@@ -91,13 +85,13 @@ int main() {
 
 ##### Output 1
 
-\!\[Screenshot Output Unguided 1\_1\]([https://github.com/(username](https://github.com/\(username) github kalian)/(nama repository github kalian)/blob/main/(path folder menyimpan screenshot output)/(nama file screenshot output).png)
+\![Screenshot Output Unguided 1_1](https://raw.githubusercontent.com/Zhafif-Yusuf/Stuktur-Data_109082500137_Zhafif-Yusuf-Al-Amin/main/Modul%201/output/OutputSoal1.png)
 
 contoh : ![Screenshot Output Unguided 1\_1]()
 
 ##### Output 2
 
-\!\[Screenshot Output Unguided 1\_2\]([https://github.com/(username](https://github.com/\(username) github kalian)/(nama repository github kalian)/blob/main/(path folder menyimpan screenshot output)/(nama file screenshot output).png)
+\![Screenshot Output Unguided 2_1](https://raw.githubusercontent.com/Zhafif-Yusuf/Stuktur-Data_109082500137_Zhafif-Yusuf-Al-Amin/main/Modul%201/output/OutputSoal1.png)
 
 penjelasan unguided 1
 
@@ -156,7 +150,7 @@ int main()
 
 ##### Output 1
 
-\!\[Screenshot Output Unguided 2\_1\]([https://github.com/(username](https://github.com/\(username) github kalian)/(nama repository github kalian)/blob/main/(path folder menyimpan screenshot output)/(nama file screenshot output).png)
+![Screenshot Output Unguided 2_1](https://raw.githubusercontent.com/Zhafif-Yusuf/Stuktur-Data_109082500137_Zhafif-Yusuf-Al-Amin/main/Modul%201/output/OutputSoal1.png)
 
 contoh : ![Screenshot Output Unguided 2\_1]()
 
@@ -166,17 +160,36 @@ contoh : ![Screenshot Output Unguided 2\_1]()
 
 penjelasan unguided 2
 
-### 3\. (isi dengan soal unguided 3\)
+### 3\. (Buatlah program yang dapat memberikan input dan output sbb.)
 
 source code unguided 3
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "input: ";
+    cin >> n;
+
+    cout << "output:" << endl;
+    for (int i = n; i >= 0; i--) {
+        for (int s = 0; s < n - i; s++)
+            cout << "  ";
+        for (int j = i; j >= 1; j--)
+            cout << j << " ";
+        cout << "*";
+        for (int j = 1; j <= i; j++)
+            cout << " " << j;
+        cout << endl;
+    }
+    return 0;
+}
 
 ### Output Unguided 3 :
 
 ##### Output 1
 
 \!\[Screenshot Output Unguided 3\_1\]([https://github.com/(username](https://github.com/\(username) github kalian)/(nama repository github kalian)/blob/main/(path folder menyimpan screenshot output)/(nama file screenshot output).png)
-
-contoh : ![Screenshot Output Unguided 3\_1]()
 
 ##### Output 2
 
@@ -189,16 +202,13 @@ penjelasan unguided 3
 ...
 
 ## Referensi
+[1] Cormen, T. H., Leiserson, C. E., Rivest, R. L., & Stein, C. (2022). Introduction to Algorithms (4th ed.). MIT Press.
 
-Daftar Pustaka / Referensi Jurnal
-[1] Parmar, V. P., & Kumbharana, C. K. (2015). Comparing Linear Search and Binary Search Algorithms to Search an Element from a Linear List Implemented through Static Array, Dynamic Array and Linked List. International Journal of Computer Applications, 121(3), 11-17.
+[2] Weiss, M. A. (2014). Data Structures and Algorithm Analysis in C++ (4th ed.). Pearson.
 
-[2] Drozdek, A. (2013). Data Structures and Algorithms in C++ (4th ed.). Cengage Learning.
+[3] Tim Dosen Struktur Data. (2026). Modul Praktikum Struktur Data. Fakultas Informatika, Universitas Telkom.
 
-[3] Weiss, M. A. (2014). Data Structures and Algorithm Analysis in C++ (4th ed.). Pearson Education.
+[4] Munir, R. (2011). Algoritma dan Pemrograman dalam Bahasa Pascal, C, dan C++. Informatika Bandung.
 
-[4] Karumanchi, N. (2017). Data Structures and Algorithms Made Easy: Data Structures and Algorithmic Puzzles (5th ed.). CareerMonk Publications.
-
-[5] Cormen, T. H., Leiserson, C. E., Rivest, R. L., & Stein, C. (2022). Introduction to Algorithms (4th ed.). MIT Press.
-
+[5] Tanenbaum, A. M., Langsam, Y., & Augenstein, M. J. (1996). Data Structures Using C and C++ (2nd ed.). Prentice-Hall.
 ...
