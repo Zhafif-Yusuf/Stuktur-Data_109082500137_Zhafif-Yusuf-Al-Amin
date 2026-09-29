@@ -20,13 +20,9 @@ Struktur Data Non-Linier: Elemen-elemen data tersusun secara hierarkis atau sali
 
 #### 3. Operasi Dasar pada Struktur Data
 Setiap struktur data mendukung berbagai operasi dasar untuk pengolahan data, di antaranya[3][5]:
-
 Pengaksesan (Traversing): Menelusuri atau mengunjungi setiap elemen data dalam struktur data[3].
-
 Penisipan (Insertion): Menambahkan elemen data baru ke dalam lokasi tertentu pada struktur data[5].
-
 Penghapusan (Deletion): Mengeluarkan atau menghapus elemen data dari struktur data[5].
-
 Pencarian (Searching): Menemukan lokasi elemen data berdasarkan kriteria atau nilai kunci tertentu[3].
 
 B. Linked List
@@ -34,20 +30,14 @@ Linked list merupakan struktur data linier dinamis yang alokasi memorinya dilaku
 
 #### 1. Jenis-Jenis Linked List
 Berdasarkan struktur dan arah penunjukan pointer-nya, linked list dibedakan menjadi[1][2]:
-
 Singly Linked List: Node hanya memiliki satu pointer yang menunjuk ke node berikutnya, dan node terakhir menunjuk ke nilai NULL[1].
-
 Doubly Linked List: Node memiliki dua pointer, yaitu penunjuk ke node berikutnya (next) dan penunjuk ke node sebelumnya (prev)[2].
-
 Circular Linked List: Pointer pada node terakhir menunjuk kembali ke node pertama (head), sehingga membentuk ikatan melingkar[1][2].
 
 #### 2. Operasi pada Linked List
 Operasi utama yang biasa diterapkan pada linked list antara lain[1][5]:
-
 Penyisipan (Insertion): Menambahkan node baru di awal (insert first), di akhir (insert last), atau di antara node tertentu (insert after)[1].
-
 Penghapusan (Deletion): Menghapus node di awal (delete first), di akhir (delete last), atau node tertentu, lalu membebaskan alokasi memorinya (dealokasi)[5].
-
 Penelusuran (Traversal): Menelusuri setiap node dari ujung awal (head) hingga ujung akhir (tail) untuk menampilkan atau memproses data[1][5].
 
 #### 3. Kelebihan dan Kekurangan Linked List
@@ -85,13 +75,13 @@ int main() {
 
 ##### Output 1
 
-\![Screenshot Output Unguided 1_1](https://raw.githubusercontent.com/Zhafif-Yusuf/Stuktur-Data_109082500137_Zhafif-Yusuf-Al-Amin/main/Modul%201/output/OutputSoal1.png)
+![Screenshot Output Unguided 1_1](https://raw.githubusercontent.com/Zhafif-Yusuf/Stuktur-Data_109082500137_Zhafif-Yusuf-Al-Amin/main/Modul%201/output/OutputSoal1.png)
 
 contoh : ![Screenshot Output Unguided 1\_1]()
 
 ##### Output 2
 
-\![Screenshot Output Unguided 2_1](https://raw.githubusercontent.com/Zhafif-Yusuf/Stuktur-Data_109082500137_Zhafif-Yusuf-Al-Amin/main/Modul%201/output/OutputSoal1.png)
+![Screenshot Output Unguided 2_1](https://raw.githubusercontent.com/Zhafif-Yusuf/Stuktur-Data_109082500137_Zhafif-Yusuf-Al-Amin/main/Modul%201/output/OutputSoal1.png)
 
 penjelasan unguided 1
 
@@ -156,7 +146,7 @@ contoh : ![Screenshot Output Unguided 2\_1]()
 
 ##### Output 2
 
-\!\[Screenshot Output Unguided 2\_2\]([https://github.com/(username](https://github.com/\(username) github kalian)/(nama repository github kalian)/blob/main/(path folder menyimpan screenshot output)/(nama file screenshot output).png)
+![Screenshot Output Unguided 2_1](https://raw.githubusercontent.com/Zhafif-Yusuf/Stuktur-Data_109082500137_Zhafif-Yusuf-Al-Amin/main/Modul%201/output/OutputSoal1.png)
 
 penjelasan unguided 2
 
@@ -189,11 +179,11 @@ int main() {
 
 ##### Output 1
 
-\!\[Screenshot Output Unguided 3\_1\]([https://github.com/(username](https://github.com/\(username) github kalian)/(nama repository github kalian)/blob/main/(path folder menyimpan screenshot output)/(nama file screenshot output).png)
+![Screenshot Output Unguided 2_1](https://raw.githubusercontent.com/Zhafif-Yusuf/Stuktur-Data_109082500137_Zhafif-Yusuf-Al-Amin/main/Modul%201/output/OutputSoal3.png)
 
 ##### Output 2
 
-\!\[Screenshot Output Unguided 3\_2\]([https://github.com/(username](https://github.com/\(username) github kalian)/(nama repository github kalian)/blob/main/(path folder menyimpan screenshot output)/(nama file screenshot output).png)
+![Screenshot Output Unguided 2_1](https://raw.githubusercontent.com/Zhafif-Yusuf/Stuktur-Data_109082500137_Zhafif-Yusuf-Al-Amin/main/Modul%201/output/OutputSoal3.png)
 
 penjelasan unguided 3
 
