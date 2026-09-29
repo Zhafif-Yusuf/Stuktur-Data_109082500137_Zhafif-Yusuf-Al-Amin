@@ -77,7 +77,7 @@ int main() {
 
 ![Screenshot Output Unguided 1_1](https://raw.githubusercontent.com/Zhafif-Yusuf/Stuktur-Data_109082500137_Zhafif-Yusuf-Al-Amin/main/Modul%201/output/OutputSoal1.png)
 
-contoh : ![Screenshot Output Unguided 1\_1]()
+
 
 ##### Output 2
 
@@ -90,6 +90,7 @@ angka tersebut dalam bentuk tulisan. Angka yang akan di-input-kan user adalah bi
 positif mulai dari 0 s.d 100)
 
 source code unguided 2
+
 #include <iostream>
 #include <string>
 using namespace std;
@@ -142,7 +143,7 @@ int main()
 
 ![Screenshot Output Unguided 2_1](https://raw.githubusercontent.com/Zhafif-Yusuf/Stuktur-Data_109082500137_Zhafif-Yusuf-Al-Amin/main/Modul%201/output/OutputSoal1.png)
 
-contoh : ![Screenshot Output Unguided 2\_1]()
+
 
 ##### Output 2
 
