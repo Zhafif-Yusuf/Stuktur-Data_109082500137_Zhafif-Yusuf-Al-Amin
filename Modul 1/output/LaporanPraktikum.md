@@ -79,7 +79,7 @@ int main() {
 ![Screenshot Output Unguided 1_1](https://raw.githubusercontent.com/Zhafif-Yusuf/Stuktur-Data_109082500137_Zhafif-Yusuf-Al-Amin/main/Modul%201/output/OutputSoal1.png)
 
 
-penjelasan unguided 1
+sebuah kode yang menggunakan bahasa cpp yang berfungsi untuk menghitung hasil penjumlahan, pengurangan, perkalian, dan pembagian dari dua bilangan yang inputannya sebuah float atau bilangan desimal. Program ini bekerja dengan menerima input angka dari pengguna melalui cin, menyimpannya ke dalam variabel x dan y, lalu mengeksekusi operasi matematika dasar secara langsung untuk kemudian menampilkan seluruh hasilnya di terminal menggunakan cout."
 
 ### 2\. Buatlah sebuah program yang menerima masukan angka dan mengeluarkan output nilai
 angka tersebut dalam bentuk tulisan. Angka yang akan di-input-kan user adalah bilangan bulat
@@ -140,7 +140,7 @@ int main()
 
 ![Screenshot Output Unguided 2_1](https://raw.githubusercontent.com/Zhafif-Yusuf/Stuktur-Data_109082500137_Zhafif-Yusuf-Al-Amin/main/Modul%201/output/OutputSoal2.png)
 
-penjelasan unguided 2
+program ini menggunakan bahasa C++ yang berfungsi untuk mengonversi input angka bulat integer dari rentang 0 hingga 100 menjadi teks terbilangnya dalam bahasa indonesia. Program ini memanfaatkan array satuan untuk menyimpan kata dasar angka, serta percabangan if-else untuk mengecek kondisi angka—mulai dari angka khusus (seperti 0, 10, 11, dan 100), angka belasan (n % 10), hingga angka puluhan yang dipecah menjadi digit puluhan (n / 10) dan satuannya (n % 10) untuk menampilkan hasil teksnya di terminal.
 
 ### 3\. (Buatlah program yang dapat memberikan input dan output sbb.)
 
@@ -174,11 +174,11 @@ int main() {
 
 ![Screenshot Output Unguided 2_1](https://raw.githubusercontent.com/Zhafif-Yusuf/Stuktur-Data_109082500137_Zhafif-Yusuf-Al-Amin/main/Modul%201/output/OutputSoal3.png)
 
-penjelasan unguided 3
+sebuah kode yang menggunakan bahasa cpp yang berfungsi untuk mencetak pola angka simetris berbentuk piramida terbalik dengan simbol bintang di tengahnya berdasarkan input n. Program ini memakai perulangan bersarang (nested loop) untuk mengatur spasi di kiri, mencetak angka yang makin mengecil ke kiri, bintang di tengah, lalu angka yang makin membesar ke kanan secara berulang sampai baris bawah tinggal bintangnya aja
 
 ## Kesimpulan
 
-...
+pada praktikum kali ini saya dapat mengetahui dasar dasar bahasa C++ mulai dari operasi dasar, percabangan sampai perulangan. Saya sangat menyukainya:D
 
 ## Referensi
 [1] Cormen, T. H., Leiserson, C. E., Rivest, R. L., & Stein, C. (2022). Introduction to Algorithms (4th ed.). MIT Press.
@@ -190,4 +190,3 @@ penjelasan unguided 3
 [4] Munir, R. (2011). Algoritma dan Pemrograman dalam Bahasa Pascal, C, dan C++. Informatika Bandung.
 
 [5] Tanenbaum, A. M., Langsam, Y., & Augenstein, M. J. (1996). Data Structures Using C and C++ (2nd ed.). Prentice-Hall.
-...
