@@ -5,7 +5,7 @@
 Zhafif Yusuf Al Amin \- 109082500137
 ## Dasar Teori
 
-A. Stuktur Data
+# A. Stuktur Data
 Struktur data merupakan cara atau skema dalam mengorganisasikan, menyimpan, dan mengelola data di dalam memori komputer agar dapat diakses dan dimanipulasi secara efisien oleh program[3]. Pemilihan struktur data yang tepat sangat mempengaruhi performa sistem, efisiensi memori, serta kompleksitas waktu eksekusi suatu algoritma[3][4].
 
 #### 1. Pengertian Struktur Data
