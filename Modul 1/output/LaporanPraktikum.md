@@ -3,28 +3,22 @@
 # 
 
 Zhafif Yusuf Al Amin \- 109082500137
-
 ## Dasar Teori
-
 
 A. Stuktur Data
 Struktur data adalah tata letak atau cara mengorganisasikan, mengelola, dan menyimpan data di dalam memori komputer agar dapat diakses serta dimanipulasi secara efisien oleh suatu algoritma [1]. Penggunaan struktur data yang tepat sangat mempengaruhi performa sistem, kompleksitas waktu (time complexity), serta efisiensi penggunaan ruang memori (space complexity) [2].
 
-### 
-
-...
-
-#### 1\. Pengertian Struktur Data
+#### 1. Pengertian Struktur Data
 Struktur data dapat didefinisikan sebagai skema pengorganisasian data yang diterapkan pada kumpulan elemen data beserta himpunan operasi yang berlaku pada data tersebut [1]. Secara garis besar, struktur data memfasilitasi pemrosesan data berjumlah besar secara terstruktur sehingga penanganan data menjadi lebih optimal [3].
 
-#### 2\. Klasifikasi Struktur Data
+#### 2. Klasifikasi Struktur Data
 Struktur data secara umum dikelompokkan menjadi dua kategori utama, yaitu struktur data linier dan struktur data non-linier [2]:
 
 Struktur Data Linier: Elemen-elemen data tersusun secara berurutan atau sekuensial dalam satu baris [2]. Contoh dari struktur data linier antara lain Array, Linked List, Stack (Tumpukan), dan Queue (Antrean) [1], [2].
 
 Struktur Data Non-Linier: Elemen-elemen data tidak tersusun secara berurutan, melainkan terhubung secara hierarkis atau berjejaring [2]. Contoh dari struktur data non-linier adalah Tree (Pohon) dan Graph (Graf) [3].
 
-#### 3\. Operasi Dasar pada Struktur Data
+#### 3. Operasi Dasar pada Struktur Data
 Setiap jenis struktur data mendukung serangkaian operasi dasar yang digunakan untuk memanipulasi data di dalamnya, antara lain [1], [3]:
 
 Pengaksesan (Traversing): Mengunjungi setiap elemen data dalam struktur data setidaknya satu kali untuk melakukan pemrosesan tertentu [1].
@@ -39,11 +33,8 @@ Pengurutan (Sorting): Menyusun ulang elemen-elemen data berdasarkan urutan terte
 
 B. Linked List
 Linked list merupakan struktur data linier dinamis yang alokasi memorinya dilakukan pada saat program dijalankan (runtime)[1][2]. Berbeda dengan array yang mengalokasikan memori secara berurutan dan berukuran tetap (static contiguous memory), linked list dapat bertambah atau berkurang ukurannya sesuai kebutuhan tanpa memuat batas maksimum di awal[1][2]. Setiap node pada linked list umumnya terdiri dari dua bagian utama, yaitu infotype (data) dan next (pointer penunjuk ke node berikutnya)[1][5].
-### 
 
-...
-
-#### 1\. Jenis-Jenis Linked List
+#### 1. Jenis-Jenis Linked List
 Berdasarkan struktur dan arah penunjukan pointer-nya, linked list dibedakan menjadi[1][2]:
 
 Singly Linked List: Node hanya memiliki satu pointer yang menunjuk ke node berikutnya, dan node terakhir menunjuk ke nilai NULL[1].
@@ -52,7 +43,7 @@ Doubly Linked List: Node memiliki dua pointer, yaitu penunjuk ke node berikutnya
 
 Circular Linked List: Pointer pada node terakhir menunjuk kembali ke node pertama (head), sehingga membentuk ikatan melingkar[1][2].
 
-#### 2\. Operasi pada Linked List
+#### 2. Operasi pada Linked List
 Operasi utama yang biasa diterapkan pada linked list antara lain[1][5]:
 
 Penyisipan (Insertion): Menambahkan node baru di awal (insert first), di akhir (insert last), atau di antara node tertentu (insert after)[1].
@@ -61,7 +52,7 @@ Penghapusan (Deletion): Menghapus node di awal (delete first), di akhir (delete 
 
 Penelusuran (Traversal): Menelusuri setiap node dari ujung awal (head) hingga ujung akhir (tail) untuk menampilkan atau memproses data[1][5].
 
-#### 3\. Kelebihan dan Kekurangan Linked List
+#### 3. Kelebihan dan Kekurangan Linked List
 Kelebihan:
 
 Pengalokasian memori bersifat dinamis sesuai kebutuhan data[1][2].
@@ -74,10 +65,9 @@ Membutuhkan alokasi memori tambahan untuk menyimpan pointer/alamat pada setiap n
 
 Tidak mendukung akses acak (random access) secara langsung menggunakan indeks seperti pada array; pencarian harus dilakukan secara sekuensial (sequential search)[1][5].
 
-
 ## Unguided
 
-### 1\. Buatlah program yang menerima input-an dua buah bilangan betipe float, kemudian memberikan output-an hasil penjumlahan, pengurangan, perkalian, dan pembagian dari dua bilangan tersebut.\
+### 1\. Buatlah program yang menerima input-an dua buah bilangan betipe float, kemudian memberikan output-an hasil penjumlahan, pengurangan, perkalian, dan pembagian dari dua bilangan tersebut.
 
 source code unguided 1
 #include <iostream>
@@ -111,9 +101,56 @@ contoh : ![Screenshot Output Unguided 1\_1]()
 
 penjelasan unguided 1
 
-### 2\. (isi dengan soal unguided 2\)
+### 2\. Buatlah sebuah program yang menerima masukan angka dan mengeluarkan output nilai
+angka tersebut dalam bentuk tulisan. Angka yang akan di-input-kan user adalah bilangan bulat
+positif mulai dari 0 s.d 100)
 
 source code unguided 2
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+    string satuan[] = {"", "satu", "dua", "tiga", "empat", "lima", "enam", "tujuh", "delapan", "sembilan"};
+    int n;
+    cin >> n;
+
+    if (n < 0 || n > 100)
+    {
+        cout << "Input harus antara 0 dan 100" << endl;
+    }
+    else if (n == 0)
+    {
+        cout << n << " : Nol" << endl;
+    }
+    else if (n < 10)
+    {
+        cout << n << " : " << satuan[n] << endl;
+    }
+    else if (n == 10)
+    {
+        cout << n << " : sepuluh" << endl;
+    }
+    else if (n == 11)
+    {
+        cout << n << " : sebelas" << endl;
+    }
+    else if (n < 20)
+    {
+        cout << n << " : " << satuan[n % 10] << " belas" << endl;
+    }
+    else if (n < 100)
+    {
+        cout << n << " : " << satuan[n / 10] << " puluh";
+        cout << " " << satuan[n % 10] << endl;
+    }
+    else
+    {
+        cout << n << " : seratus" << endl;
+    }
+    return 0;
+}
 
 ### Output Unguided 2 :
 
