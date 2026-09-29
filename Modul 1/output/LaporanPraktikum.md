@@ -54,6 +54,8 @@ Tidak mendukung akses acak (random access) secara langsung menggunakan indeks se
 ### 1\. Buatlah program yang menerima input-an dua buah bilangan betipe float, kemudian memberikan output-an hasil penjumlahan, pengurangan, perkalian, dan pembagian dari dua bilangan tersebut.
 
 source code unguided 1
+
+```
 #include <iostream>
 using namespace std;
 
