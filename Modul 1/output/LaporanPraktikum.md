@@ -81,9 +81,7 @@ int main() {
 
 sebuah kode yang menggunakan bahasa cpp yang berfungsi untuk menghitung hasil penjumlahan, pengurangan, perkalian, dan pembagian dari dua bilangan yang inputannya sebuah float atau bilangan desimal. Program ini bekerja dengan menerima input angka dari pengguna melalui cin, menyimpannya ke dalam variabel x dan y, lalu mengeksekusi operasi matematika dasar secara langsung untuk kemudian menampilkan seluruh hasilnya di terminal menggunakan cout
 
-### 2\. Buatlah sebuah program yang menerima masukan angka dan mengeluarkan output nilai
-angka tersebut dalam bentuk tulisan. Angka yang akan di-input-kan user adalah bilangan bulat
-positif mulai dari 0 s.d 100)
+### 2\. Buatlah sebuah program yang menerima masukan angka dan mengeluarkan output nilai angka tersebut dalam bentuk tulisan. Angka yang akan di-input-kan user adalah bilangan bulat positif mulai dari 0 s.d 100)
 
 source code unguided 2
 ```
