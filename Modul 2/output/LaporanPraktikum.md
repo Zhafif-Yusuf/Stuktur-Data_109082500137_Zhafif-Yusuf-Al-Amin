@@ -270,9 +270,9 @@ int main() {
 
 ### Output Unguided 2 :
 
-##### Output 1
+##### Output 2
 
-![Screenshot Output Unguided 2_1](https://raw.githubusercontent.com/Zhafif-Yusuf/Stuktur-Data_109082500137_Zhafif-Yusuf-Al-Amin/main/Modul%202/output/OutputSoal2.png)
+![Screenshot Output Unguided 2_2](https://raw.githubusercontent.com/Zhafif-Yusuf/Stuktur-Data_109082500137_Zhafif-Yusuf-Al-Amin/main/Modul%202/output/OutputSoal2.png)
 
 sebuah kode yang menggunakan bahasa c++ yang berfungsi untuk melakukan pertukaran nilai dari tiga variabel yaitu x, y, dan z menggunakan konsep pointer. program ini bekerja dengan mendeklarasikan pointer px, py, dan pz yang menunjuk ke alamat memori variabel asli, lalu memanfaatkan variabel penampung temp untuk menggeser dan menukar posisi nilainya secara berurutan untuk kemudian menampilkan nilai awal dan nilai akhirnya di terminal.
 
@@ -402,9 +402,9 @@ int main()
 ```
 ### Output Unguided 3 :
 
-##### Output 1
+##### Output 3
 
-![Screenshot Output Unguided 2_1](https://raw.githubusercontent.com/Zhafif-Yusuf/Stuktur-Data_109082500137_Zhafif-Yusuf-Al-Amin/main/Modul%202/output/OutputSoal3.png)
+![Screenshot Output Unguided 2_3](https://raw.githubusercontent.com/Zhafif-Yusuf/Stuktur-Data_109082500137_Zhafif-Yusuf-Al-Amin/main/Modul%202/output/OutputSoal3.png)
 
 sebuah kode yang menggunakan bahasa c++ yang berfungsi untuk mengolah data didalam array satu dimensi melalui program menu interaktif berbasis perulangan do while. program ini bekerja dengan menerima input pilihan menu dari pengguna melalui cin, lalu mengeksekusi fungsi yang dipilih seperti menampilkan seluruh isi array, mencari nilai maksimum dan minimum, hingga menghitung nilai rata-rata dari elemen array tersebut untuk ditampilkan di terminal.
 

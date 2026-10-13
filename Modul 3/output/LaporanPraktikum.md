@@ -306,7 +306,7 @@ int main() {
 
 ### Output Unguided 2 :
 
-##### Output 1
+##### Output 2
 
 ![Screenshot Output Unguided 2_1](https://raw.githubusercontent.com/Zhafif-Yusuf/Stuktur-Data_109082500137_Zhafif-Yusuf-Al-Amin/main/Modul%203/output/OutputSoal2.png)
 
@@ -421,7 +421,7 @@ int main() {
 ```
 ### Output Unguided 3 :
 
-##### Output 1
+##### Output 3
 
 ![Screenshot Output Unguided 2_1](https://raw.githubusercontent.com/Zhafif-Yusuf/Stuktur-Data_109082500137_Zhafif-Yusuf-Al-Amin/main/Modul%203/output/OutputSoal3.png)
 
