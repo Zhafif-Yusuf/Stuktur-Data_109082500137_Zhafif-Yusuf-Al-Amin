@@ -32,6 +32,77 @@ Struktur Data Non-Linier: Elemen-elemen data tersusun secara hierarkis atau sali
 #### 3. Linked List
 Linked list merupakan struktur data linier dinamis yang alokasi memorinya dilakukan pada saat program dijalankan (runtime)[1][2]. Berbeda dengan array yang mengalokasikan memori secara berurutan dan berukuran tetap (static contiguous memory), linked list dapat bertambah atau berkurang ukurannya sesuai kebutuhan[1][2]. Setiap node pada linked list umumnya terdiri dari bagian data (infotype) dan pointer penunjuk ke node berikutnya[1][5].
 
+## Guided
+
+### 1. Buku
+
+source code unguided 1
+buku.h
+```
+#ifndef BUKU_H
+#define BUKU_H
+#include <iostream>
+using namespace std;
+struct buku
+{
+    string judul;
+    int halaman;
+    string penulis;
+    
+};
+
+void editIsi(string judul, int halaman, string penulis,buku &buku);
+void tampilkanIsiBuku(buku buku);
+bool checkPenulis(buku buku);
+
+#endif
+```
+buku.cpp
+```
+#include "buku.h"
+void editIsi(string judul, int halaman, string penulis,buku &buku){
+    buku.judul = judul;
+    buku.halaman = halaman;
+    buku.penulis = penulis;
+}
+
+void tampilkanIsiBuku(buku buku)
+{
+    cout << "Judul Buku: " << buku.judul << endl;
+    cout << "Jumlah Halaman: " << buku.halaman << endl;
+    cout << "Penulis: " << buku.penulis << endl;
+}
+bool checkPenulis(buku buku)
+{
+    return buku.penulis == "";
+}
+```
+main.cpp
+```
+#include <iostream>
+#include "buku.h"
+using namespace std;
+int main(){
+    buku novel;
+    string judul, penulis;
+    int halaman;
+    cout << "Masukkan Judul Buku: ";
+    cin>> judul;
+    cout << "Masukkan Jumlah Halaman: ";
+    cin >> halaman; 
+    cout << "Masukkan Penulis: ";
+    cin >> penulis;
+    editIsi(judul, halaman, penulis, novel);
+    tampilkanIsiBuku(novel);
+    cout << checkPenulis(novel)<<endl;
+    return 0;
+
+    
+}
+```
+
+Sebuah kode yang menggunakan bahasa C++ yang berfungsi untuk mengimplementasikan konsep Abstract Data Type (ADT) pada data buku dengan pemisahan struktur modular dalam tiga file (buku.h, buku.cpp, dan main.cpp). Program ini bekerja dengan menyediakan prosedur editIsi untuk memasukkan dan mengubah data buku (judul, halaman, dan penulis), prosedur tampilkanIsiBuku untuk mencetak informasi lengkap buku ke terminal, serta fungsi checkPenulis untuk memvalidasi apakah nama penulis buku kosong atau terisi, yang kemudian diuji secara interaktif melalui fungsi utama (main).
+
 ## Unguided
 
 ### 1\. Buat program yang dapat menyimpan data mahasiswa (max. 10) ke dalam sebuah array dengan field nama, nim, uts, uas, tugas, dan nilai akhir. Nilai akhir diperoleh dari FUNGSI dengan rumus 0.3*uts+0.4*uas+0.3*tugas.
