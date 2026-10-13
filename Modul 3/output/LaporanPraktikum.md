@@ -36,7 +36,7 @@ Linked list merupakan struktur data linier dinamis yang alokasi memorinya dilaku
 
 ### 1. Buku
 
-source code unguided 1
+source code Guided 1
 buku.h
 ```
 #ifndef BUKU_H
