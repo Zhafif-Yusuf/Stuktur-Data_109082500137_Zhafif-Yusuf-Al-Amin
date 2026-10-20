@@ -1,4 +1,4 @@
-# **Laporan Praktikum Modul 2 \- Codeblocks IDE & Pengenalan Bahas C++ (Bagian Pertama)**
+# **Laporan Praktikum Modul 2 \- PENGENALAN BAHASA C++ (BAGIAN KEDUA)**
 
 # 
 
