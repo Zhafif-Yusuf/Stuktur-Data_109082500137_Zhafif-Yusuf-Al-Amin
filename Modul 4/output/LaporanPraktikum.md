@@ -391,7 +391,7 @@ int main() {
 
 ##### Output 1
 
-![Screenshot Output Unguided 1_1](https://github.com/Zhafif-Yusuf Stuktur-Data_109082500137_Zhafif-Yusuf-Al-Amin/blob/main/Modul%204/output/OutputSoal1.png)
+![Screenshot Output Unguided 1_1](https://raw.githubusercontent.com/Zhafif-Yusuf/Stuktur-Data_109082500137_Zhafif-Yusuf-Al-Amin/main/Modul%204/output/OutputSoal1.png)
 
 
 Dari AI: Program C++ ini sebenarnya adalah implementasi dari konsep Abstract Data Type (ADT) Singly Linked List yang kodenya dipecah jadi tiga file modular biar rapi, yaitu Singlylist.h buat nyiapin kerangka struktur node (info dan next) beserta prototipe fungsinya, Singlylist.cpp buat nulis isi logika kodenya seperti createList, alokasi memori, sampai insertFirst, dan main.cpp sebagai tempat eksekusi utamanya. Di bagian main-nya, program ini bikin list kosong terus masukin angka 2, 0, 8, 12, sama 9 satu-persatu ke bagian depan list pakai metode insertFirst, yang mana karena sifatnya di depan, urutan penyisipannya bikin data terakhir ada di posisi awal, lalu semuanya langsung dicetak ke layar secara berurutan lewat prosedur printInfo
