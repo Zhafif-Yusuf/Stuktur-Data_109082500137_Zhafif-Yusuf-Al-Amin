@@ -24,9 +24,22 @@ int main(){
     cout << "jumlah node : " << nbList(List) << endl;
     cout << endl;
 
-    updateFirst(List);
-    cout << "--- ISI LIST SETELAH DILAKUKAN UPDATE FIRST ---" << endl;
+    // updateFirst(List);
+    // cout << "--- ISI LIST SETELAH DILAKUKAN UPDATE FIRST ---" << endl;
+    // printList(List);
+    // updateLast(List);
+    // cout << "--- ISI LIST SETELAH DILAKUKAN UPDATE LAST ---" << endl;
+    // printList(List);
+
+    // updateAfter(List, nodeC);
+    // cout << "--- ISI LIST SETELAH DILAKUKAN UPDATE AFTER NODE C ---" << endl;
+    // printList(List);
+
+    updateByNim(List, "2211110014");
+    cout << "--- ISI LIST SETELAH DILAKUKAN UPDATE BY NIM ---" << endl;
     printList(List);
+
+
     
     return 0;
 

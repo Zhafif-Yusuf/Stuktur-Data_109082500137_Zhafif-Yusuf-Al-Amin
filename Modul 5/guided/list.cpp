@@ -231,6 +231,14 @@ void updateFirst(linkedlist &list)
 
 void updateLast(linkedlist &list)
 {
+    if (isEmpty(list))
+    {
+        cout << "List kosong!" << endl;
+        return;
+    }
+    else
+    {
+    
     dataMahasiswa newData;
     cout << "Masukan nama baru : ";
     cin >> newData.nama;
@@ -247,9 +255,17 @@ void updateLast(linkedlist &list)
 
     nodeBantu->isidata = newData;
 }
+}
 
-void updateAfter(address &prev)
+void updateAfter(linkedlist list, address &prev)
 {
+     if (isEmpty(list))
+    {
+        cout << "List kosong!" << endl;
+        return;
+    }
+    else
+    {
     dataMahasiswa newData;
     cout << "Masukan nama baru : ";
     cin >> newData.nama;
@@ -260,33 +276,34 @@ void updateAfter(address &prev)
 
     prev->next->isidata = newData;
 }
-// void updateByNim(linkedlist &list, string nim)
-// {
-//     if (!isEmpty(list))
-//     {
-//         address _____ = findNodeByData(list, nim);
+}
+void updateByNim(linkedlist &list, string nim)
+{
+    if (!isEmpty(list))
+    {
+        address nodeBantu = findNodeByData(list, nim);
 
-//         if (_____ != Nil)
-//         {
-//             _____ newData;
-//             cout << "Masukan nama baru : ";
-//             cin >> ______.____;
-//             cout << "Masukan nim baru : ";
-//             cin >> ____.____;
-//             cout << "Masukan umur baru : ";
-//             cin >> ____.____;
+        if (nodeBantu != Nil)
+        {
+            dataMahasiswa newData;
+            cout << "Masukan nama baru : ";
+            cin >> newData.nama;
+            cout << "Masukan nim baru : ";
+            cin >> newData.nim;
+            cout << "Masukan umur baru : ";
+            cin >> newData.umur;
 
-//             _____->_____ = newData;
-//         }
-//     }
-//     else
-//     {
-//         cout << "List kosong!" << endl;
-//     }
-// }
+            nodeBantu->isidata = newData;
+        }
+    }
+    else
+    {
+        cout << "List kosong!" << endl;
+    }
+}
 
 // prosedur-prosedur untuk searching data didalam list
-void FindNodeByData(linkedlist List, string data)
+address findNodeByData(linkedlist List, string data)
 {
     /* I.S. list mungkin kosong
        F.S. menampilkan node yang sesuai dengan nama atau nim yang dicari */
@@ -304,10 +321,8 @@ void FindNodeByData(linkedlist List, string data)
             posisi++;
             if (nodeBantu->isidata.nama == data || nodeBantu->isidata.nim == data)
             {
-                cout << "Data " << data << " ditemukan pada posisi ke-" << posisi << "!" << endl;
-                cout << "Nama : " << nodeBantu->isidata.nama << ", NIM : " << nodeBantu->isidata.nim << ", Usia : " << nodeBantu->isidata.umur << endl;
                 found = true;
-                break;
+                return nodeBantu;
             }
             nodeBantu = nodeBantu->next;
         }
@@ -317,6 +332,7 @@ void FindNodeByData(linkedlist List, string data)
         }
     }
     cout << endl;
+    return Nil;
 }
 
 void FindNodeByAddress(linkedlist List, address node)
@@ -385,4 +401,5 @@ void FindNodeByRange(linkedlist List, int nilaiAwal, int nilaiAkhir)
         }
     }
     cout << endl;
+    
 }

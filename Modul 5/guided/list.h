@@ -49,6 +49,8 @@ void FindNodeByRange(linkedlist list, int nilaiAwal, int nilaiAkhir);
 // update lagi//
 void updateFirst(linkedlist &list);
 void updateLast(linkedlist &list);
-void updateAfter(address &prev);
+void updateAfter(linkedlist list,address &prev);
 void updateByNim(linkedlist &list, string nim);
+
+address findNodeByData(linkedlist list, string nim);
 #endif
