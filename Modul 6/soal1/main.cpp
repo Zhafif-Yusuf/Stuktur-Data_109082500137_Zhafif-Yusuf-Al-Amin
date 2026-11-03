@@ -1,6 +1,3 @@
-// Zhafif Yusuf Al Amin
-// 109082500137
-
 #include <iostream>
 #include "Doublylist.h"
 
