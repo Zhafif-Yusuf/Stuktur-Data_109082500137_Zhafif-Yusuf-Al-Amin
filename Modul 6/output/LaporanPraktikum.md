@@ -899,5 +899,5 @@ Sebuah program yang dimana data kendaraan (nopol, warna, dan tahun buat) disimpa
 ## Kesimpulan
 dari praktikum Modul 6, saya jadi paham bahwa doubly linked list adalah struktur data yang tiap elemennya punya dua pointer, yaitu next dan prev, sehingga list bisa dibaca dari depan maupun belakang. Lewat ADT yang dibuat di Doublylist.h, Doublylist.cpp, dan main.cpp, saya belajar membuat list, menambah data dengan insertLast, menampilkan data dengan printInfo, mencari data dengan findElm (sekaligus mencegah nopol ganda), serta menghapus data dengan deleteFirst, deleteLast, dan deleteAfter. Yang paling penting, saya harus teliti menjaga pointer First, Last, next, dan prev supaya list tetap tersambung dengan benar.
 
-## Referensi(contoh)
+## Referensi
 Laboratorium Informatika Telkom University. (2026). Modul 04 Praktikum Struktur Data: Singly Linked List (Bagian Pertama). Bandung: Fakultas Informatika Telkom University.   Cormen, T. H., Leiserson, C. E., Rivest, R. L., & Stein, C. (2009). Introduction to Algorithms (3rd ed.). MIT Press.Stroustrup, B. (2013). The C++ Programming Language (4th ed.). Addison-Wesley.
