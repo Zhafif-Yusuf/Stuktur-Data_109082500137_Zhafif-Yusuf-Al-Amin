@@ -1,29 +1,36 @@
 # **Laporan Praktikum Modul 5 \- SINGLY LINKED LIST (BAGIAN KEDUA)**
 
 # 
-
 Zhafif Yusuf Al Amin \- 109082500137
 ## Dasar Teori
 
-### A. Konsep Dasar Linked List dan Pointer
-#### 1. Definisi Linked List
-Linked list (atau list berkait) merupakan salah satu struktur data linier yang terdiri dari sekumpulan elemen data (node/simpul) yang saling terhubung secara dinamis. Berbeda dengan array yang menyimpan data dalam blok memori yang bersebelahan (kontigu), elemen-elemen pada linked list tersebar di memori komputer dan dihubungkan satu sama lain menggunakan pointer. Setiap node setidaknya memiliki dua bagian utama, yaitu bagian data (info) dan bagian penunjuk (next atau successor).
+### A. Konsep Dasar Doubly Linked List
+#### 1. Definisi Doubly Linked List
+Doubly linked list (list berkait ganda) adalah struktur data linier yang terdiri dari sekumpulan node yang saling terhubung secara dinamis melalui pointer. Berbeda dengan singly linked list yang hanya memiliki satu pointer penunjuk, setiap node pada doubly linked list memiliki tiga bagian, yaitu bagian data (info), pointer next yang menunjuk ke node sesudahnya, dan pointer prev yang menunjuk ke node sebelumnya. Dengan dua arah pointer ini, penelusuran data dapat dilakukan secara maju maupun mundur.
 
-#### 2. Keunggulan Linked List Dibandingkan Array
-Dalam bahasa pemrograman C++, linked list umumnya diimplementasikan menggunakan pointer karena menawarkan fleksibilitas yang lebih tinggi dibandingkan struktur array. Keunggulan utamanya terletak pada sifat alokasi memori yang dinamis, di mana penambahan atau pengurangan elemen dapat dilakukan saat program berjalan (runtime) tanpa mengalokasikan ruang memori maksimum di awal seperti pada array statis. Selain itu, operasi penyisipan (insertion) maupun penghapusan (deletion) elemen data pada linked list relatif lebih efisien dan mudah dilakukan karena hanya perlu mengubah arah alokasi pointer tanpa harus melakukan pergeseran (shifting) elemen-elemen lain seperti yang terjadi pada struktur array
+#### 2. Perbedaan dengan Singly Linked List
+Pada singly linked list, node hanya dapat ditelusuri satu arah dari First hingga Nil. Pada doubly linked list, pointer prev memungkinkan akses ke node sebelumnya secara langsung. Hal ini mempermudah operasi penghapusan dan penyisipan di tengah atau di akhir list, karena tidak perlu menelusuri list dari awal untuk mencari node sebelumnya. Selain itu, doubly linked list umumnya menyimpan dua pointer penanda, yaitu First yang menunjuk ke node pertama dan Last yang menunjuk ke node terakhir, sehingga operasi insertLast dan deleteLast dapat dilakukan tanpa menelusuri seluruh list. Kekurangannya, setiap node membutuhkan memori tambahan untuk menyimpan pointer prev, dan pengelolaan pointer menjadi lebih rumit karena ada dua arah yang harus dijaga konsistensinya.
 
 #### 3. Hubungan ADT dengan Struktur Data
-Singly Linked List merupakan variasi struktur data linked list yang paling sederhana karena hanya menggunakan satu arah pointer penunjuk (yaitu pointer next) untuk menghubungkan antar-node sehingga pembacaan elemen hanya dapat dilakukan secara maju. Struktur ini terdiri dari elemen atau node sebagai unit tempat penyimpanan data di memori, serta variabel pointer first (atau head) yang bertindak sebagai pintu masuk utama dengan menyimpan alamat memori elemen pertama di dalam list. Jika list dalam kondisi kosong, maka pointer first akan menunjuk ke nilai Nil (atau NULL), sedangkan untuk list yang memiliki isi, node paling terakhir selalu ditandai dengan pointer next yang menunjuk ke nilai Nil sebagai penanda akhir dari rantai data.
+Pada praktikum ini, doubly linked list diimplementasikan sebagai Abstract Data Type (ADT) yang dipisah menjadi beberapa file. File Doublylist.h berisi definisi tipe data dan deklarasi fungsi (prototype), Doublylist.cpp berisi implementasi fungsi-fungsi tersebut, dan main.cpp berisi program utama yang memanggil fungsi ADT. Tipe data yang digunakan adalah kendaraan (berisi nopol, warna, dan thnBuat) yang dialiaskan sebagai infotype, struct ElmList sebagai node (berisi info, next, dan prev), serta struct List yang berisi pointer First dan Last. Jika list kosong, First dan Last bernilai NULL. Jika list hanya berisi satu elemen, First dan Last menunjuk ke node yang sama.
 
-### B. Operasi Dasar pada Singly Linked List
+### B. Operasi Dasar pada Doubly Linked List
 #### 1. Inisialisasi dan Manajemen Memori
-Proses pembentukan awal list diawali dengan fungsi Create List yang bertugas mengeset nilai pointer L.first menjadi Nil untuk menandakan bahwa list baru berhasil dibuat dalam kondisi kosong. Dalam mengelola elemen, alokasi memori dilakukan secara dinamis menggunakan operator new di C++ untuk memesan ruang memori baru bagi node yang akan dimasukkan, sementara proses dealokasi dilakukan menggunakan sintaks delete untuk mengembalikan ruang memori yang tidak terpakai kembali ke sistem agar mencegah terjadinya kebocoran memori (memory leak).
+Fungsi CreateList mengeset L.First dan L.Last menjadi NULL sehingga list terbentuk dalam kondisi kosong. Fungsi alokasi membuat node baru secara dinamis menggunakan operator new, mengisi info dengan data yang diberikan, serta mengeset next dan prev menjadi NULL. Fungsi dealokasi menghapus node dengan operator delete dan mengeset pointer menjadi NULL agar memori dikembalikan ke sistem dan tidak terjadi kebocoran memori (memory leak).
 
-#### 2. Operasi Penyisipan (Insert First)
-Operasi Insert First merupakan metode penambahan elemen baru yang ditempatkan di posisi paling depan atau menjadi node pertama di dalam list. Langkah algoritmanya dimulai dengan mengarahkan pointer next dari node baru ($P$) menuju ke node yang sedang ditunjuk oleh L.first, kemudian memperbarui pointer L.first agar menunjuk secara langsung ke alamat node baru ($P$) tersebut.
+#### 2. Operasi Penyisipan (Insert First)(contoh)
+Operasi insertLast menambahkan node baru di akhir list. Jika list masih kosong, First dan Last langsung menunjuk ke node baru. Jika list sudah berisi, prev node baru diarahkan ke Last lama, next dari Last lama diarahkan ke node baru, kemudian Last diperbarui menunjuk ke node baru tersebut.
 
-#### 3. Operasi Penelusuran dan Menampilkan Data (View / Print Info)
-Operasi penelusuran (traversal) atau printInfo dilakukan dengan cara mengunjungi setiap node di dalam list secara berurutan mulai dari node pertama (L.first) hingga node terakhir. Selama proses penelusuran berlangsung, program akan mengakses dan menampilkan nilai info yang tersimpan pada masing-masing node ke layar terminal sampai penunjuk pointer menemukan nilai Nil.
+#### 3. Operasi Penelusuran dan Pencarian (printInfo dan findElm)
+Fungsi printInfo menelusuri list dari First menggunakan pointer next hingga bertemu NULL, sambil menampilkan nomor polisi, warna, dan tahun pembuatan tiap kendaraan. Jika list kosong, ditampilkan pesan “List Kosong”. Fungsi findElm juga menelusuri list dengan cara yang sama untuk mencari node yang nopol-nya sama dengan data yang dicari. Fungsi ini mengembalikan alamat node jika ditemukan dan NULL jika tidak ditemukan. Fungsi ini dimanfaatkan untuk mencegah data dengan nomor polisi yang sama dimasukkan dua kali.
+
+#### 4. Operasi Penghapusan (Delete)
+Terdapat tiga operasi penghapusan pada program ini:
+
+deleteFirst: melepas node pertama. First dipindahkan ke node berikutnya dan prev-nya diset NULL. Jika hanya ada satu elemen, First dan Last menjadi NULL.
+deleteLast: melepas node terakhir. Last dipindahkan ke node sebelumnya dan next-nya diset NULL. Jika hanya ada satu elemen, First dan Last menjadi NULL.
+deleteAfter: melepas node yang berada setelah node Prec. Pointer next milik Prec diarahkan ke node sesudah node yang dihapus, dan pointer prev node tersebut diarahkan kembali ke Prec.
+Ketiga fungsi hanya melepas node dari list dan menyimpannya pada parameter P. Penghapusan memori dilakukan terpisah menggunakan fungsi dealokasi.
 
 ## Guided
 
