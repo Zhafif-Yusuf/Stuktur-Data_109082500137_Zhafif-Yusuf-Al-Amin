@@ -22,8 +22,6 @@ address alokasi(infotype x);
 void dealokasi(address &P);
 void printInfo(List L);
 void insertFirst(List &L, address P);
-
-// Tambahan soal nomor 3 & 4
 address findElm(List L, infotype x);
 int sumInfo(List L);
 

@@ -12,7 +12,6 @@ int main() {
     infotype x;
     address P;
 
-    // --- SOAL 1: Input Data Kendaraan ---
     for (int i = 0; i < 4; i++) {
         cout << "masukkan nomor polisi: ";
         cin >> x.nopol;
@@ -35,7 +34,6 @@ int main() {
     printInfo(L);
     cout << endl;
 
-    // --- SOAL 2: Cari Elemen dengan Nopol D001 ---
     string cariNopol;
     cout << "Masukkan Nomor Polisi yang dicari : ";
     cin >> cariNopol;
@@ -53,7 +51,6 @@ int main() {
     }
     cout << endl;
 
-    // --- SOAL 3: Hapus Elemen dengan Nopol D003 ---
     string hapusNopol;
     cout << "Masukkan Nomor Polisi yang akan dihapus : ";
     cin >> hapusNopol;

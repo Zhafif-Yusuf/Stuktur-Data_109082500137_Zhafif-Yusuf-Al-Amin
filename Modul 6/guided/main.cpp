@@ -24,7 +24,6 @@ int main()
     insertLast(List, nodeB);
     cout << endl;
 
-    // D - A - C - E - B
     cout << "--- Isi List Setelah Insert ---" << endl;
     printList(List);
     cout << endl;
