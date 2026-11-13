@@ -1,41 +1,22 @@
-#ifndef DOUBLYLIST_H
-#define DOUBLYLIST_H
+#ifndef STACK_H_INCLUDED
+#define STACK_H_INCLUDED
 
 #include <iostream>
-#include <string>
-
 using namespace std;
 
-struct kendaraan {
-    string nopol;
-    string warna;
-    int thnBuat;
+typedef int infotype;
+
+struct Stack {
+    infotype info[20];  
+    int top;            
 };
 
-typedef kendaraan infotype;
-typedef struct ElmList *address;
+void createStack(Stack &S);
+void push(Stack &S, infotype x);
+infotype pop(Stack &S);
+void printInfo(Stack S);
+void balikStack(Stack &S);
+void pushAscending(Stack &S, infotype x);
+void getInputStream(Stack &S);
 
-struct ElmList {
-    infotype info;
-    address next;
-    address prev;
-};
-
-struct List {
-    address First;
-    address Last;
-};
-
-void CreateList(List &L);
-address alokasi(infotype x);
-void dealokasi(address &P);
-void printInfo(List L);
-void insertLast(List &L, address P);
-
-// Fungsi Tambahan Soal 2 & 3
-address findElm(List L, infotype x);
-void deleteFirst(List &L, address &P);
-void deleteLast(List &L, address &P);
-void deleteAfter(address Prec, address &P);
-
-#endif
+#endif 

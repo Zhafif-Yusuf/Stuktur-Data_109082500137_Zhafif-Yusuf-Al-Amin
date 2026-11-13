@@ -1,97 +1,72 @@
-#include "Doublylist.h"
+#include "stack.h"
 
-void CreateList(List &L) {
-    L.First = NULL;
-    L.Last = NULL;
+void createStack(Stack &S) {
+    S.top = -1;
 }
 
-address alokasi(infotype x) {
-    address P = new ElmList;
-    if (P != NULL) {
-        P->info = x;
-        P->next = NULL;
-        P->prev = NULL;
-    }
-    return P;
-}
-
-void dealokasi(address &P) {
-    delete P;
-    P = NULL;
-}
-
-void printInfo(List L) {
-    address P = L.First;
-    if (P == NULL) {
-        cout << "List Kosong" << endl;
+void push(Stack &S, infotype x) {
+    if (S.top < 19) {          
+        S.top++;
+        S.info[S.top] = x;
     } else {
-        while (P != NULL) {
-            cout << "no polisi : " << P->info.nopol << endl;
-            cout << "warna     : " << P->info.warna << endl;
-            cout << "tahun     : " << P->info.thnBuat << endl;
-            P = P->next;
-        }
+        cout << "Stack penuh!" << endl;
     }
 }
 
-void insertLast(List &L, address P) {
-    if (L.First == NULL && L.Last == NULL) {
-        L.First = P;
-        L.Last = P;
-    } else {
-        P->prev = L.Last;
-        L.Last->next = P;
-        L.Last = P;
+infotype pop(Stack &S) {
+    if (S.top == -1) {        
+        cout << "Stack kosong!" << endl;
+        return -1;
+    }
+    infotype x = S.info[S.top];
+    S.top--;
+    return x;
+}
+
+void printInfo(Stack S) {
+    cout << "[TOP] ";
+    for (int i = S.top; i >= 0; i--) {
+        cout << S.info[i] << " ";
+    }
+    cout << endl;
+}
+
+void balikStack(Stack &S) {
+    int kiri = 0;
+    int kanan = S.top;
+    while (kiri < kanan) {
+        infotype temp = S.info[kiri];
+        S.info[kiri] = S.info[kanan];
+        S.info[kanan] = temp;
+        kiri++;
+        kanan--;
     }
 }
 
-address findElm(List L, infotype x) {
-    address P = L.First;
-    while (P != NULL) {
-        if (P->info.nopol == x.nopol) {
-            return P;
-        }
-        P = P->next;
+void pushAscending(Stack &S, infotype x) {
+    if (S.top >= 19) {
+        cout << "Stack penuh!" << endl;
+        return;
     }
-    return NULL;
+
+    int posisi = 0;
+    while (posisi <= S.top && S.info[posisi] <= x) {
+        posisi++;
+    }
+    
+    for (int i = S.top; i >= posisi; i--) {
+        S.info[i + 1] = S.info[i];
+    }
+    S.info[posisi] = x;
+    S.top++;
 }
 
-void deleteFirst(List &L, address &P) {
-    if (L.First != NULL) {
-        P = L.First;
-        if (L.First == L.Last) {
-            L.First = NULL;
-            L.Last = NULL;
-        } else {
-            L.First = L.First->next;
-            L.First->prev = NULL;
-            P->next = NULL;
+void getInputStream(Stack &S) {
+    char c = cin.get();
+    while (c != '\n') {
+        if (c >= '0' && c <= '9') {
+            push(S, c - '0');  
         }
-    }
-}
-
-void deleteLast(List &L, address &P) {
-    if (L.Last != NULL) {
-        P = L.Last;
-        if (L.First == L.Last) {
-            L.First = NULL;
-            L.Last = NULL;
-        } else {
-            L.Last = L.Last->prev;
-            L.Last->next = NULL;
-            P->prev = NULL;
-        }
-    }
-}
-
-void deleteAfter(address Prec, address &P) {
-    if (Prec != NULL && Prec->next != NULL) {
-        P = Prec->next;
-        Prec->next = P->next;
-        if (P->next != NULL) {
-            P->next->prev = Prec;
-        }
-        P->next = NULL;
-        P->prev = NULL;
+        c = cin.get();
     }
 }

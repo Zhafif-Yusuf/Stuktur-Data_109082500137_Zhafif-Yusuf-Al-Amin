@@ -6,33 +6,30 @@
 Zhafif Yusuf Al Amin \- 109082500137
 ## Dasar Teori
 
-### A. Konsep Dasar Doubly Linked List EDIT
-#### 1. Definisi Doubly Linked List EDIT
-EDIT Doubly linked list (list berkait ganda) adalah struktur data linier yang terdiri dari sekumpulan node yang saling terhubung secara dinamis melalui pointer. Berbeda dengan singly linked list yang hanya memiliki satu pointer penunjuk, setiap node pada doubly linked list memiliki tiga bagian, yaitu bagian data (info), pointer next yang menunjuk ke node sesudahnya, dan pointer prev yang menunjuk ke node sebelumnya. Dengan dua arah pointer ini, penelusuran data dapat dilakukan secara maju maupun mundur.
+### A. Konsep Dasar Stack
+#### 1. Definisi Stack
+Stack (tumpukan) adalah struktur data linier yang cara kerjanya seperti tumpukan barang. Data yang dimasukkan paling akhir berada di posisi paling atas, dan data itulah yang pertama kali bisa diambil. Prinsip ini disebut LIFO (Last In First Out). Akses pada stack hanya boleh dilakukan di satu sisi saja, yaitu elemen paling atas yang disebut Top. Karena itu, data di bagian tengah atau bawah tidak bisa diambil langsung, melainkan harus menunggu data di atasnya diambil terlebih dahulu.
 
-#### 2. Perbedaan dengan Singly Linked List EDIT
-EDIT Pada singly linked list, node hanya dapat ditelusuri satu arah dari First hingga Nil. Pada doubly linked list, pointer prev memungkinkan akses ke node sebelumnya secara langsung. Hal ini mempermudah operasi penghapusan dan penyisipan di tengah atau di akhir list, karena tidak perlu menelusuri list dari awal untuk mencari node sebelumnya. Selain itu, doubly linked list umumnya menyimpan dua pointer penanda, yaitu First yang menunjuk ke node pertama dan Last yang menunjuk ke node terakhir, sehingga operasi insertLast dan deleteLast dapat dilakukan tanpa menelusuri seluruh list. Kekurangannya, setiap node membutuhkan memori tambahan untuk menyimpan pointer prev, dan pengelolaan pointer menjadi lebih rumit karena ada dua arah yang harus dijaga konsistensinya.
+#### 2. Perbedaan Representasi Pointer dan Tabel
+Stack dapat dibuat dengan dua cara. Pada representasi pointer, stack dibuat dari node yang saling terhubung seperti singly linked list. Setiap node berisi info dan pointer next, sedangkan stack hanya menyimpan satu pointer, yaitu Top yang menunjuk ke node paling atas. Jika stack kosong, Top bernilai Nil. Ukuran stack bisa bertambah sesuai kebutuhan, tetapi memori untuk node harus dikelola sendiri dengan alokasi dan dealokasi.
 
-#### 3. Hubungan ADT dengan Struktur Data EDIT
-EDIT Pada praktikum ini, doubly linked list diimplementasikan sebagai Abstract Data Type (ADT) yang dipisah menjadi beberapa file. File Doublylist.h berisi definisi tipe data dan deklarasi fungsi (prototype), Doublylist.cpp berisi implementasi fungsi-fungsi tersebut, dan main.cpp berisi program utama yang memanggil fungsi ADT. Tipe data yang digunakan adalah kendaraan (berisi nopol, warna, dan thnBuat) yang dialiaskan sebagai infotype, struct ElmList sebagai node (berisi info, next, dan prev), serta struct List yang berisi pointer First dan Last. Jika list kosong, First dan Last bernilai NULL. Jika list hanya berisi satu elemen, First dan Last menunjuk ke node yang sama.
+Pada representasi tabel, stack dibuat dari array berindeks dan sebuah variabel Top yang menyimpan indeks elemen paling atas. Jumlah data yang bisa ditampung terbatas sesuai ukuran array, misalnya Imax. Kelebihannya, representasi ini tidak membutuhkan manajemen memori, sehingga lebih sederhana. Kekurangannya, stack bisa penuh sehingga sebelum push perlu dicek apakah masih ada tempat.
 
-### B. Operasi Dasar pada Doubly Linked List EDIT
-#### 1. Inisialisasi dan Manajemen Memori EDIT
-EDIT Fungsi CreateList mengeset L.First dan L.Last menjadi NULL sehingga list terbentuk dalam kondisi kosong. Fungsi alokasi membuat node baru secara dinamis menggunakan operator new, mengisi info dengan data yang diberikan, serta mengeset next dan prev menjadi NULL. Fungsi dealokasi menghapus node dengan operator delete dan mengeset pointer menjadi NULL agar memori dikembalikan ke sistem dan tidak terjadi kebocoran memori (memory leak).
+#### 3. Hubungan ADT dengan Struktur Data
+Pada praktikum ini, stack diimplementasikan sebagai Abstract Data Type (ADT) yang dipisah menjadi beberapa file. File stack.h berisi definisi tipe data dan deklarasi fungsi (prototype), stack.cpp berisi implementasi fungsi-fungsi tersebut, dan main.cpp berisi program utama yang memanggil fungsi ADT. Pada representasi pointer, tipe datanya berupa struct node (berisi dataAngka dan next) dan struct stack yang berisi pointer top. Pada representasi tabel, tipe datanya berupa struct yang berisi array data dan variabel top. Dengan pemisahan ini, program utama cukup memakai fungsi yang tersedia tanpa perlu tahu cara kerja stack di dalamnya.
 
-#### 2. Operasi Penyisipan (Insert First)EDIT
-EDIT Operasi insertLast menambahkan node baru di akhir list. Jika list masih kosong, First dan Last langsung menunjuk ke node baru. Jika list sudah berisi, prev node baru diarahkan ke Last lama, next dari Last lama diarahkan ke node baru, kemudian Last diperbarui menunjuk ke node baru tersebut.
+### B. Operasi Dasar pada Stack
+#### 1. Inisialisasi dan Manajemen Memori
+Fungsi createStack membuat stack dalam keadaan kosong. Pada representasi pointer, Top diisi Nil. Pada representasi tabel, Top diisi -1 (atau 0 pada modul yang menghitung indeks dari 1) sebagai tanda belum ada data. Fungsi isEmpty dipakai untuk mengecek apakah stack kosong, dan pada representasi tabel ada juga isFull untuk mengecek apakah stack sudah penuh. Khusus representasi pointer, fungsi alokasi membuat node baru secara dinamis dengan operator new lalu mengisi datanya, sedangkan fungsi dealokasi menghapus node dengan operator delete agar memori kembali ke sistem dan tidak terjadi memory leak.
 
-#### 3. Operasi Penelusuran dan Pencarian (printInfo dan findElm) EDIT
-EDIT Fungsi printInfo menelusuri list dari First menggunakan pointer next hingga bertemu NULL, sambil menampilkan nomor polisi, warna, dan tahun pembuatan tiap kendaraan. Jika list kosong, ditampilkan pesan “List Kosong”. Fungsi findElm juga menelusuri list dengan cara yang sama untuk mencari node yang nopol-nya sama dengan data yang dicari. Fungsi ini mengembalikan alamat node jika ditemukan dan NULL jika tidak ditemukan. Fungsi ini dimanfaatkan untuk mencegah data dengan nomor polisi yang sama dimasukkan dua kali.
+#### 2. Operasi Penyisipan (Push)
+Push adalah operasi menambah data ke dalam stack, dan data baru selalu masuk di posisi paling atas. Pada representasi pointer, push sama seperti insert first pada list: next node baru diarahkan ke Top yang lama, lalu Top dipindahkan ke node baru. Pada representasi tabel, Top dinaikkan satu indeks (Top = Top + 1), lalu data disimpan pada indeks tersebut. Sebelum push, stack perlu dicek dulu apakah masih ada tempat.
 
-#### 4. Operasi Penghapusan (Delete) EDIT
-EDIT Terdapat tiga operasi penghapusan pada program ini:
+#### 3. Operasi Pengambilan (Pop)
+Pop adalah operasi mengambil data yang berada di paling atas stack. Pada representasi pointer, pop sama seperti delete first pada list: node Top disimpan di pointer bantu, Top dipindahkan ke node berikutnya, lalu node tersebut dilepas dan dihapus dengan dealokasi. Pada representasi tabel, data di indeks Top diambil, lalu Top diturunkan satu indeks (Top = Top - 1). Data lama di array tidak dihapus, tetapi tidak dianggap bagian dari stack lagi karena berada di atas Top. Sebelum pop, stack perlu dicek dulu apakah kosong.
 
-EDIT deleteFirst: melepas node pertama. First dipindahkan ke node berikutnya dan prev-nya diset NULL. Jika hanya ada satu elemen, First dan Last menjadi NULL.
-deleteLast: melepas node terakhir. Last dipindahkan ke node sebelumnya dan next-nya diset NULL. Jika hanya ada satu elemen, First dan Last menjadi NULL.
-deleteAfter: melepas node yang berada setelah node Prec. Pointer next milik Prec diarahkan ke node sesudah node yang dihapus, dan pointer prev node tersebut diarahkan kembali ke Prec.
-Ketiga fungsi hanya melepas node dari list dan menyimpannya pada parameter P. Penghapusan memori dilakukan terpisah menggunakan fungsi dealokasi.
+#### 4. Operasi Penelusuran dan Pencarian (printInfo/view dan searchData)
+Fungsi printInfo atau view menampilkan seluruh isi stack mulai dari elemen paling atas sampai paling bawah. Pada representasi pointer, penelusuran dimulai dari Top mengikuti pointer next sampai Nil. Pada representasi tabel, penelusuran dimulai dari indeks Top turun sampai indeks awal. Jika stack kosong, ditampilkan pesan bahwa stack kosong. Fungsi searchData menelusuri stack dengan cara yang sama untuk mencari data tertentu, lalu menampilkan posisinya dihitung dari atas atau pesan bahwa data tidak ditemukan. Selain itu ada fungsi update untuk mengubah isi data pada posisi tertentu, serta pada latihan ada balikStack untuk membalik urutan isi stack dan pushAscending untuk menyisipkan data agar isi stack tetap terurut.
 
 ## Guided 1
 
@@ -230,7 +227,7 @@ int main()
     return 0;
 }
 ```
-EDIT : Program ini membuat doubly linked list untuk data makanan. List kosong dibuat dulu, lalu 5 node ditambahkan dengan insertFirst, insertLast, insertAfter, dan insertBefore sampai urutannya D - A - C - E - B. Setelah itu data diubah dengan fungsi update, dicari dengan findByName dan findByMinRating, lalu dihapus dengan deleteByName, deleteFirst, dan deleteBefore. Isi list ditampilkan di tiap tahap untuk melihat hasilnya.
+Program ini membuat stack dengan representasi tabel (array). Stack bertipe stackTable yang berisi array data berukuran MAX = 10 dan variabel top, dengan top = -1 sebagai tanda stack kosong. Di main, stack dibuat dengan createStack lalu diisi angka 1 sampai 5 memakai push, sehingga angka 5 berada di paling atas. Isi stack ditampilkan dengan view dari atas ke bawah. Setelah itu dilakukan pop dua kali yang mengambil angka 5 dan 4 secara berurutan, lalu isi stack ditampilkan lagi. Data kemudian diubah dengan update pada posisi ke-2 dan ke-1 (dihitung dari atas) sesuai angka yang diinputkan, dan hasilnya ditampilkan kembali. Terakhir, searchData dipakai untuk mencari angka 4 dan 9 dan menampilkan posisinya atau pesan bahwa data tidak ditemukan. Fungsi isFull dan isEmpty dipakai untuk mencegah push saat stack penuh dan pop saat stack kosong.
 
 ## Guided 2
 
@@ -483,240 +480,157 @@ int main()
     return 0;
 }
 ```
-EDIT : Program ini membuat doubly linked list untuk data makanan. List kosong dibuat dulu, lalu 5 node ditambahkan dengan insertFirst, insertLast, insertAfter, dan insertBefore sampai urutannya D - A - C - E - B. Setelah itu data diubah dengan fungsi update, dicari dengan findByName dan findByMinRating, lalu dihapus dengan deleteByName, deleteFirst, dan deleteBefore. Isi list ditampilkan di tiap tahap untuk melihat hasilnya.
+Program ini membuat stack dengan representasi pointer. Stack terdiri dari node (berisi dataAngka dan next) dan satu pointer top yang menunjuk ke node paling atas, dengan top = Nil sebagai tanda stack kosong. Di main, stack dibuat dengan createStack, lalu lima node dibuat dengan alokasi (angka 1 sampai 5) dan dimasukkan satu per satu dengan push. Setiap push bekerja seperti insert first, sehingga node terakhir (5) berada di paling atas. Isi stack ditampilkan dengan view dari top mengikuti pointer next. Setelah itu dilakukan pop dua kali yang melepas node paling atas dan menghapusnya dari memori dengan dealokasi, lalu isi stack ditampilkan lagi. Data diubah dengan update pada posisi ke-2, ke-1, dan ke-4. Karena setelah dua kali pop hanya tersisa tiga node, posisi ke-4 menghasilkan pesan posisi tidak valid. Terakhir, searchData dipakai untuk mencari angka 4 dan 9 dan menampilkan posisinya atau pesan bahwa data tidak ditemukan.
 
 ## Unguided
 
 ### 1\.
 
 source code unguided 1
-Doublylist.h
+stack.h
 ```
-#ifndef DOUBLYLIST_H
-#define DOUBLYLIST_H
+#ifndef STACK_H_INCLUDED
+#define STACK_H_INCLUDED
 
 #include <iostream>
-#include <string>
-
 using namespace std;
 
-struct kendaraan {
-    string nopol;
-    string warna;
-    int thnBuat;
+typedef int infotype;
+
+struct Stack {
+    infotype info[20];  
+    int top;            
 };
 
-typedef kendaraan infotype;
-typedef struct ElmList *address;
+void createStack(Stack &S);
+void push(Stack &S, infotype x);
+infotype pop(Stack &S);
+void printInfo(Stack S);
+void balikStack(Stack &S);
+void pushAscending(Stack &S, infotype x);
+void getInputStream(Stack &S);
 
-struct ElmList {
-    infotype info;
-    address next;
-    address prev;
-};
-
-struct List {
-    address First;
-    address Last;
-};
-
-void CreateList(List &L);
-address alokasi(infotype x);
-void dealokasi(address &P);
-void printInfo(List L);
-void insertLast(List &L, address P);
-
-// Fungsi Tambahan Soal 2 & 3
-address findElm(List L, infotype x);
-void deleteFirst(List &L, address &P);
-void deleteLast(List &L, address &P);
-void deleteAfter(address Prec, address &P);
-
-#endif
+#endif 
 ```
-Doublylist.cpp
+stack.cpp
 ```
-#include "Doublylist.h"
+#include "stack.h"
 
-void CreateList(List &L) {
-    L.First = NULL;
-    L.Last = NULL;
+void createStack(Stack &S) {
+    S.top = -1;
 }
 
-address alokasi(infotype x) {
-    address P = new ElmList;
-    if (P != NULL) {
-        P->info = x;
-        P->next = NULL;
-        P->prev = NULL;
-    }
-    return P;
-}
-
-void dealokasi(address &P) {
-    delete P;
-    P = NULL;
-}
-
-void printInfo(List L) {
-    address P = L.First;
-    if (P == NULL) {
-        cout << "List Kosong" << endl;
+void push(Stack &S, infotype x) {
+    if (S.top < 19) {          
+        S.top++;
+        S.info[S.top] = x;
     } else {
-        while (P != NULL) {
-            cout << "no polisi : " << P->info.nopol << endl;
-            cout << "warna     : " << P->info.warna << endl;
-            cout << "tahun     : " << P->info.thnBuat << endl;
-            P = P->next;
-        }
+        cout << "Stack penuh!" << endl;
     }
 }
 
-void insertLast(List &L, address P) {
-    if (L.First == NULL && L.Last == NULL) {
-        L.First = P;
-        L.Last = P;
-    } else {
-        P->prev = L.Last;
-        L.Last->next = P;
-        L.Last = P;
+infotype pop(Stack &S) {
+    if (S.top == -1) {        
+        cout << "Stack kosong!" << endl;
+        return -1;
+    }
+    infotype x = S.info[S.top];
+    S.top--;
+    return x;
+}
+
+void printInfo(Stack S) {
+    cout << "[TOP] ";
+    for (int i = S.top; i >= 0; i--) {
+        cout << S.info[i] << " ";
+    }
+    cout << endl;
+}
+
+void balikStack(Stack &S) {
+    int kiri = 0;
+    int kanan = S.top;
+    while (kiri < kanan) {
+        infotype temp = S.info[kiri];
+        S.info[kiri] = S.info[kanan];
+        S.info[kanan] = temp;
+        kiri++;
+        kanan--;
     }
 }
 
-address findElm(List L, infotype x) {
-    address P = L.First;
-    while (P != NULL) {
-        if (P->info.nopol == x.nopol) {
-            return P;
-        }
-        P = P->next;
+void pushAscending(Stack &S, infotype x) {
+    if (S.top >= 19) {
+        cout << "Stack penuh!" << endl;
+        return;
     }
-    return NULL;
+
+    int posisi = 0;
+    while (posisi <= S.top && S.info[posisi] <= x) {
+        posisi++;
+    }
+    
+    for (int i = S.top; i >= posisi; i--) {
+        S.info[i + 1] = S.info[i];
+    }
+    S.info[posisi] = x;
+    S.top++;
 }
 
-void deleteFirst(List &L, address &P) {
-    if (L.First != NULL) {
-        P = L.First;
-        if (L.First == L.Last) {
-            L.First = NULL;
-            L.Last = NULL;
-        } else {
-            L.First = L.First->next;
-            L.First->prev = NULL;
-            P->next = NULL;
+void getInputStream(Stack &S) {
+    char c = cin.get();
+    while (c != '\n') {
+        if (c >= '0' && c <= '9') {
+            push(S, c - '0');  
         }
-    }
-}
-
-void deleteLast(List &L, address &P) {
-    if (L.Last != NULL) {
-        P = L.Last;
-        if (L.First == L.Last) {
-            L.First = NULL;
-            L.Last = NULL;
-        } else {
-            L.Last = L.Last->prev;
-            L.Last->next = NULL;
-            P->prev = NULL;
-        }
-    }
-}
-
-void deleteAfter(address Prec, address &P) {
-    if (Prec != NULL && Prec->next != NULL) {
-        P = Prec->next;
-        Prec->next = P->next;
-        if (P->next != NULL) {
-            P->next->prev = Prec;
-        }
-        P->next = NULL;
-        P->prev = NULL;
+        c = cin.get();
     }
 }
 ```
 main.cpp
 ```
-#include <iostream>
-#include "Doublylist.h"
-
-using namespace std;
+#include "stack.h"
 
 int main() {
-    cout << "Zhafif Yusuf Al Amin" << endl;
-    cout << "109082500137" << endl << endl;
+    cout << "=== Latihan 1 ===" << endl;
+    Stack S;
+    createStack(S);
+    push(S, 3);
+    push(S, 4);
+    push(S, 8);
+    pop(S);
+    push(S, 2);
+    push(S, 3);
+    pop(S);
+    push(S, 9);
+    printInfo(S);
+    cout << "balik stack" << endl;
+    balikStack(S);
+    printInfo(S);
 
-    List L;
-    CreateList(L);
-    infotype x;
-    address P;
+    cout << "\n=== Latihan 2 ===" << endl;
+    Stack S2;
+    createStack(S2);
+    pushAscending(S2, 3);
+    pushAscending(S2, 4);
+    pushAscending(S2, 8);
+    pushAscending(S2, 2);
+    pushAscending(S2, 3);
+    pushAscending(S2, 9);
+    printInfo(S2);
+    cout << "balik stack" << endl;
+    balikStack(S2);
+    printInfo(S2);
 
-    // --- SOAL 1: Input Data Kendaraan ---
-    for (int i = 0; i < 4; i++) {
-        cout << "masukkan nomor polisi: ";
-        cin >> x.nopol;
-        cout << "masukkan warna kendaraan: ";
-        cin >> x.warna;
-        cout << "masukkan tahun kendaraan: ";
-        cin >> x.thnBuat;
-
-        // Cek apakah nopol sudah terdaftar
-        if (findElm(L, x) != NULL) {
-            cout << "nomor polisi sudah terdaftar" << endl << endl;
-        } else {
-            P = alokasi(x);
-            insertLast(L, P);
-            cout << endl;
-        }
-    }
-
-    cout << "DATA LIST 1" << endl;
-    printInfo(L);
-    cout << endl;
-
-    // --- SOAL 2: Cari Elemen dengan Nopol D001 ---
-    string cariNopol;
-    cout << "Masukkan Nomor Polisi yang dicari : ";
-    cin >> cariNopol;
-
-    infotype xCari;
-    xCari.nopol = cariNopol;
-    address pCari = findElm(L, xCari);
-
-    if (pCari != NULL) {
-        cout << "\nNomor Polisi : " << pCari->info.nopol << endl;
-        cout << "Warna        : " << pCari->info.warna << endl;
-        cout << "Tahun        : " << pCari->info.thnBuat << endl;
-    } else {
-        cout << "Data tidak ditemukan." << endl;
-    }
-    cout << endl;
-
-    // --- SOAL 3: Hapus Elemen dengan Nopol D003 ---
-    string hapusNopol;
-    cout << "Masukkan Nomor Polisi yang akan dihapus : ";
-    cin >> hapusNopol;
-
-    infotype xHapus;
-    xHapus.nopol = hapusNopol;
-    address pHapus = findElm(L, xHapus);
-
-    if (pHapus != NULL) {
-        address pDel = NULL;
-        if (pHapus == L.First) {
-            deleteFirst(L, pDel);
-        } else if (pHapus == L.Last) {
-            deleteLast(L, pDel);
-        } else {
-            deleteAfter(pHapus->prev, pDel);
-        }
-        cout << "Data dengan nomor polisi " << hapusNopol << " berhasil dihapus." << endl << endl;
-        dealokasi(pDel);
-    } else {
-        cout << "Data tidak ditemukan untuk dihapus." << endl << endl;
-    }
-
-    cout << "DATA LIST 1" << endl;
-    printInfo(L);
+    cout << "\n=== Latihan 3 ===" << endl;
+    cout << "Ketik angka lalu Enter: ";
+    Stack S3;
+    createStack(S3);
+    getInputStream(S3);
+    printInfo(S3);
+    cout << "balik stack" << endl;
+    balikStack(S3);
+    printInfo(S3);
 
     return 0;
 }
@@ -727,10 +641,14 @@ int main() {
 
 ![Screenshot Output Unguided 1_1](https://raw.githubusercontent.com/Zhafif-Yusuf/Stuktur-Data_109082500137_Zhafif-Yusuf-Al-Amin/main/Modul%207/output/OutputSoal1.png)
 
-EDIT Sebuah program yang dimana data kendaraan (nopol, warna, dan tahun buat) disimpan dalam doubly linked list menggunakan ADT yang dipisah ke Doublylist.h, Doublylist.cpp, dan main.cpp. Program meminta input 4 data kendaraan dan mengecek nopol dengan findElm supaya tidak ada yang kembar, lalu data yang lolos dimasukkan dengan insertLast dan ditampilkan dengan printInfo. Setelah itu program mencari data berdasarkan nopol, lalu menghapus data berdasarkan nopol memakai deleteFirst, deleteLast, atau deleteAfter sesuai posisinya, dan node yang dilepas dihapus dari memori dengan dealokasi. Terakhir, isi list ditampilkan lagi untuk memastikan datanya sudah berkurang.
+Program ini membuat ADT Stack dengan representasi tabel (array) yang dipisah ke stack.h, stack.cpp, dan main.cpp. Tipe data stack berisi array info berukuran 20 bertipe integer dan variabel top, dengan top = -1 sebagai tanda stack kosong. Pada latihan 1, stack diisi dan diambil dengan push dan pop sesuai urutan di soal, lalu isinya ditampilkan dengan printInfo dari atas (TOP) ke bawah. Setelah itu balikStack membalik urutan isi stack dengan cara menukar data dari ujung kiri dan kanan, lalu isinya ditampilkan lagi. Pada latihan 2, ditambahkan prosedur pushAscending yang mencari tempat yang pas untuk data baru, menggeser data yang lebih besar ke atas, lalu menyisipkan data tersebut, sehingga isi stack selalu terurut dengan data terbesar di paling atas. Pada latihan 3, ditambahkan prosedur getInputStream yang membaca input dengan cin.get() terus-menerus sampai user menekan Enter, lalu setiap angka yang diketik dimasukkan ke dalam stack. Pada tiap latihan, isi stack ditampilkan sebelum dan sesudah dibalik untuk memastikan hasilnya sesuai.
 
 ## Kesimpulan
-EDIT  dari praktikum Modul 6, saya jadi paham bahwa doubly linked list adalah struktur data yang tiap elemennya punya dua pointer, yaitu next dan prev, sehingga list bisa dibaca dari depan maupun belakang. Lewat ADT yang dibuat di Doublylist.h, Doublylist.cpp, dan main.cpp, saya belajar membuat list, menambah data dengan insertLast, menampilkan data dengan printInfo, mencari data dengan findElm (sekaligus mencegah nopol ganda), serta menghapus data dengan deleteFirst, deleteLast, dan deleteAfter. Yang paling penting, saya harus teliti menjaga pointer First, Last, next, dan prev supaya list tetap tersambung dengan benar.
+Dari praktikum Modul 7, saya jadi paham bahwa stack adalah struktur data yang bekerja dengan prinsip LIFO (Last In First Out), di mana data hanya bisa dimasukkan dan diambil dari satu sisi, yaitu Top. Lewat dua representasi, yaitu pointer dan tabel (array), saya belajar bahwa konsepnya sama tetapi caranya berbeda. Representasi pointer butuh alokasi dan dealokasi memori, sedangkan representasi tabel lebih sederhana tetapi kapasitasnya terbatas sehingga perlu dicek penuh atau tidaknya. Lewat ADT yang dibuat di stack.h, stack.cpp, dan main.cpp, saya belajar membuat stack dengan createStack, menambah data dengan push, mengambil data dengan pop, menampilkan data dengan printInfo atau view, serta mencari dan mengubah data. Pada latihan, saya juga belajar membalik isi stack dengan balikStack, menjaga isi stack tetap terurut dengan pushAscending, dan membaca input sampai Enter dengan getInputStream. Yang paling penting, saya harus teliti menjaga nilai Top (atau pointer top) supaya tidak terjadi pop pada stack kosong atau push pada stack yang penuh.
 
 ## Referensi
-EDIT Laboratorium Informatika Telkom University. (2026). Modul 04 Praktikum Struktur Data: Singly Linked List (Bagian Pertama). Bandung: Fakultas Informatika Telkom University.   Cormen, T. H., Leiserson, C. E., Rivest, R. L., & Stein, C. (2009). Introduction to Algorithms (3rd ed.). MIT Press.Stroustrup, B. (2013). The C++ Programming Language (4th ed.). Addison-Wesley.
+Laboratorium Informatika Telkom University. (2026). Modul 07 Praktikum Struktur Data: Stack. Bandung: Fakultas Informatika Telkom University.
+
+Cormen, T. H., Leiserson, C. E., Rivest, R. L., & Stein, C. (2009). Introduction to Algorithms (3rd ed.). MIT Press.
+
+Stroustrup, B. (2013). The C++ Programming Language (4th ed.). Addison-Wesley.

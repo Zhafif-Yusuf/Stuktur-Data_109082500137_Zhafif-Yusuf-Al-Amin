@@ -1,81 +1,45 @@
-#include <iostream>
-#include "Doublylist.h"
-
-using namespace std;
+#include "stack.h"
 
 int main() {
-    cout << "Zhafif Yusuf Al Amin" << endl;
-    cout << "109082500137" << endl << endl;
+    cout << "=== Latihan 1 ===" << endl;
+    Stack S;
+    createStack(S);
+    push(S, 3);
+    push(S, 4);
+    push(S, 8);
+    pop(S);
+    push(S, 2);
+    push(S, 3);
+    pop(S);
+    push(S, 9);
+    printInfo(S);
+    cout << "balik stack" << endl;
+    balikStack(S);
+    printInfo(S);
 
-    List L;
-    CreateList(L);
-    infotype x;
-    address P;
+    cout << "\n=== Latihan 2 ===" << endl;
+    Stack S2;
+    createStack(S2);
+    pushAscending(S2, 3);
+    pushAscending(S2, 4);
+    pushAscending(S2, 8);
+    pushAscending(S2, 2);
+    pushAscending(S2, 3);
+    pushAscending(S2, 9);
+    printInfo(S2);
+    cout << "balik stack" << endl;
+    balikStack(S2);
+    printInfo(S2);
 
-    for (int i = 0; i < 4; i++) {
-        cout << "masukkan nomor polisi: ";
-        cin >> x.nopol;
-        cout << "masukkan warna kendaraan: ";
-        cin >> x.warna;
-        cout << "masukkan tahun kendaraan: ";
-        cin >> x.thnBuat;
-
-        // Cek apakah nopol sudah terdaftar
-        if (findElm(L, x) != NULL) {
-            cout << "nomor polisi sudah terdaftar" << endl << endl;
-        } else {
-            P = alokasi(x);
-            insertLast(L, P);
-            cout << endl;
-        }
-    }
-
-    cout << "DATA LIST 1" << endl;
-    printInfo(L);
-    cout << endl;
-
-    string cariNopol;
-    cout << "Masukkan Nomor Polisi yang dicari : ";
-    cin >> cariNopol;
-
-    infotype xCari;
-    xCari.nopol = cariNopol;
-    address pCari = findElm(L, xCari);
-
-    if (pCari != NULL) {
-        cout << "\nNomor Polisi : " << pCari->info.nopol << endl;
-        cout << "Warna        : " << pCari->info.warna << endl;
-        cout << "Tahun        : " << pCari->info.thnBuat << endl;
-    } else {
-        cout << "Data tidak ditemukan." << endl;
-    }
-    cout << endl;
-
-    string hapusNopol;
-    cout << "Masukkan Nomor Polisi yang akan dihapus : ";
-    cin >> hapusNopol;
-
-    infotype xHapus;
-    xHapus.nopol = hapusNopol;
-    address pHapus = findElm(L, xHapus);
-
-    if (pHapus != NULL) {
-        address pDel = NULL;
-        if (pHapus == L.First) {
-            deleteFirst(L, pDel);
-        } else if (pHapus == L.Last) {
-            deleteLast(L, pDel);
-        } else {
-            deleteAfter(pHapus->prev, pDel);
-        }
-        cout << "Data dengan nomor polisi " << hapusNopol << " berhasil dihapus." << endl << endl;
-        dealokasi(pDel);
-    } else {
-        cout << "Data tidak ditemukan untuk dihapus." << endl << endl;
-    }
-
-    cout << "DATA LIST 1" << endl;
-    printInfo(L);
+    cout << "\n=== Latihan 3 ===" << endl;
+    cout << "Ketik angka lalu Enter: ";
+    Stack S3;
+    createStack(S3);
+    getInputStream(S3);
+    printInfo(S3);
+    cout << "balik stack" << endl;
+    balikStack(S3);
+    printInfo(S3);
 
     return 0;
 }
