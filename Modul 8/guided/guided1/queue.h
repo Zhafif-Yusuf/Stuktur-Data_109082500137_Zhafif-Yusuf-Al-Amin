@@ -1,0 +1,25 @@
+#ifndef QUEUE_H
+#define QUEUE_H
+
+#include <iostream>
+#include <string>
+using namespace std;
+int maxQueue = 20;
+
+struct Node
+{
+    string nama;
+    Node *next;
+};
+struct queue
+{
+    Node *head, *tail;
+};
+void CreateQueue(queue &Q);
+bool isEmpty(queue Q);
+bool isFull(queue Q);
+void enQueue(queue &Q, const string &nama);
+void deQueue(queue &Q);
+void viewQueue(queue Q);
+void clearQueue(queue &Q);
+#endif
