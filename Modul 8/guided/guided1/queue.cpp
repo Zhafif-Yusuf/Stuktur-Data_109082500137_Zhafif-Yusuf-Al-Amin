@@ -12,8 +12,9 @@ bool isEmpty(queue Q)
 
 bool isFull(queue Q)
 {
+    int maxQueue = 20;
     int counter = 0;
-    Node *nodeBantu = Q.head
+    Node *nodeBantu = Q.head;
     while (nodeBantu != Q.tail)
     {
         counter ++;
@@ -25,11 +26,13 @@ bool isFull(queue Q)
 
 void enQueue(queue &Q, const string &nama)
 {
-    if (isFull(Q)){
-        cout<<"queue sudah penuh";
+    if (isEmpty(Q))
+    {
+        Node *nodeBaru = new Node{nama,nullptr};
+        Q.head = Q.tail = nodeBaru;
     }else{
 
-        Node nodeBaru=new Node{nama, nullptr};
+        Node *nodeBaru=new Node{nama, nullptr};
         Q.tail->next = nodeBaru;
         Q.tail =nodeBaru;
     }
@@ -42,8 +45,8 @@ void deQueue(queue &Q)
         cout<<"Queue kosong";
     }else{
         Node *nodeHapus =Q.head;
-        Q.head=Q.head->next
-        delete nodeHapus
+        Q.head=Q.head->next;
+        delete nodeHapus;
     }
 }
 
@@ -56,7 +59,7 @@ void viewQueue(queue Q)
         Node *nodeBantu= Q.head;
 
         while (nodeBantu!=nullptr){
-            cout<<"Nama : " << nodeBantu->nama;
+            cout<<"Nama : " << nodeBantu->nama<<endl;
             nodeBantu=nodeBantu->next;
         }
     }

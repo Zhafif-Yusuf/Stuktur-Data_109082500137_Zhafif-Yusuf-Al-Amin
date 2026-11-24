@@ -4,7 +4,7 @@
 #include <iostream>
 #include <string>
 using namespace std;
-int maxQueue = 20;
+
 
 struct Node
 {

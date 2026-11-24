@@ -7,16 +7,16 @@ int main()
     queue Q;
     CreateQueue(Q);
 
-    enQueue(Q, "Gilar");
-    enQueue(Q, "Aflah");
-    enQueue(Q, "Aedil");
-    enQueue(Q, "Fathir");
-    enQueue(Q, "Kevin");
-    enQueue(Q, "Zulfa");
+    enQueue(Q, "Gilar ");
+    enQueue(Q, "Aflah ");
+    enQueue(Q, "Aedil ");
+    enQueue(Q, "Fathir ");
+    enQueue(Q, "Kevin ");
+    enQueue(Q, "Zulfa ");
     cout<<endl;
 
     cout<<"--isi Queue Setelah enQueue---"<<endl;
-    viewQueue
+    viewQueue(Q);
 
     deQueue(Q);
     deQueue(Q);
