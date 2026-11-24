@@ -550,11 +550,11 @@ int main() {
 
 Sebuah program yang dimana ADT Queue dengan representasi tabel (array berukuran 5) dibuat di queue.h, queue.cpp, dan main.cpp dengan mekanisme head diam dan tail bergerak. Fungsi yang dibuat adalah createQueue, isEmptyQueue, isFullQueue, enqueue, dequeue, dan printInfo. Di main.cpp, program menjalankan urutan enqueue 5, 2, 7, dequeue, enqueue 4, lalu dequeue dua kali. Setiap langkahnya langsung ditampilkan dengan printInfo dalam format H - T | isi queue, sehingga perubahan posisi head, tail, dan isi queue bisa terlihat. program menampilkan nama dan NIM, lalu tabel dengan kolom H - T dan Queue info. Awalnya queue kosong (-1 - -1). Setelah enqueue 5, 2, dan 7, isinya 5 2 7 dengan head 0 dan tail 2. Setelah dequeue, angka 5 keluar dan isinya menjadi 2 7. Setelah enqueue 4, isinya 2 7 4. Dua dequeue berikutnya mengeluarkan 2 dan 7, sehingga tersisa 4 dengan head dan tail sama-sama 0.
 
-## Kesimpulan EDIT
+## Kesimpulan 
 Dari praktikum Modul 8, dipahami bahwa queue adalah struktur data dengan prinsip FIFO (First In First Out), di mana data masuk lewat belakang (tail) dan keluar lewat depan (head). Lewat representasi pointer dan tabel (array), dipelajari bahwa konsepnya sama tetapi caranya berbeda, yaitu pointer perlu pengelolaan memori sedangkan tabel kapasitasnya terbatas sehingga perlu dicek penuh atau tidaknya. Lewat ADT yang dibuat di queue.h, queue.cpp, dan main.cpp, dipelajari cara membuat queue, menambah data dengan enqueue, mengambil data dengan dequeue, dan menampilkan data dengan printInfo. Yang paling penting, posisi head dan tail harus dijaga dengan teliti supaya tidak terjadi dequeue pada queue kosong atau enqueue pada queue yang penuh.
 
-## Referensi EDIT
-ELaboratorium Informatika Telkom University. (2026). Modul 07 Praktikum Struktur Data: Queue. Bandung: Fakultas Informatika Telkom University.
+## Referensi 
+Laboratorium Informatika Telkom University. (2026). Modul 07 Praktikum Struktur Data: Queue. Bandung: Fakultas Informatika Telkom University.
 
 Cormen, T. H., Leiserson, C. E., Rivest, R. L., & Stein, C. (2009). Introduction to Algorithms (3rd ed.). MIT Press.
 
